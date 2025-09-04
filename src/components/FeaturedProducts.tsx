@@ -7,17 +7,17 @@ import doorsWindowsImage from "@/assets/doors-windows-wood.jpg";
 const FeaturedProducts = () => {
   const products = [
     {
-      title: "Well-Decorated Bedroom",
+      title: "Bedroom Furniture",
       description: "Transform your bedroom into a luxurious retreat with our premium wood furniture. Custom-crafted headboards, nightstands, and wardrobes that combine comfort with elegance.",
       image: bedroomImage,
     },
     {
-      title: "Work Units, TV Units & Wooden Dividers",
+      title: "Work Units, TV Units & Dividers",
       description: "Modern entertainment centers and workspace solutions. Our functional designs maximize space while maintaining the natural beauty of wood.",
       image: workUnitsImage,
     },
     {
-      title: "Doors and Windows",
+      title: "Doors & Windows",
       description: "Premium wooden doors and window frames that enhance your home's security and aesthetic appeal. Weather-resistant and built to last.",
       image: doorsWindowsImage,
     },
@@ -28,11 +28,30 @@ const FeaturedProducts = () => {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Featured Products
+            Our Product Categories
           </h2>
           <p className="text-lg text-wood-dark max-w-2xl mx-auto">
-            Discover our premium collection of wood products, crafted with precision and designed to elevate your living spaces.
+            Discover our comprehensive range of premium wood products and solutions for every space and need.
           </p>
+        </div>
+
+        {/* Additional Product Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold text-primary mb-3">Modular Kitchens</h3>
+            <p className="text-wood-dark mb-4">Contemporary kitchen solutions with premium wood cabinets and custom designs.</p>
+            <button className="text-primary hover:text-primary/80 font-semibold">Inquire →</button>
+          </div>
+          <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold text-primary mb-3">Office Interiors</h3>
+            <p className="text-wood-dark mb-4">Professional workspace solutions with elegant wooden furniture and storage.</p>
+            <button className="text-primary hover:text-primary/80 font-semibold">Inquire →</button>
+          </div>
+          <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold text-primary mb-3">Apartments</h3>
+            <p className="text-wood-dark mb-4">Complete apartment solutions: 1BHK, 2BHK, and 3BHK interior designs.</p>
+            <button className="text-primary hover:text-primary/80 font-semibold">View Options →</button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

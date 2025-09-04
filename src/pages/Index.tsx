@@ -4,6 +4,8 @@ import FeaturedProducts from "@/components/FeaturedProducts";
 import ApartmentTypes from "@/components/ApartmentTypes";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Portfolio from "@/components/Portfolio";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -17,6 +19,8 @@ const Index = () => {
         <ApartmentTypes />
         <About />
         <Services />
+        <Portfolio />
+        <WhyChooseUs />
         <Contact />
       </main>
       <Footer />
