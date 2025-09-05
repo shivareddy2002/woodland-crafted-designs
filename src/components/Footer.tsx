@@ -93,10 +93,15 @@ const Footer = () => {
               <Instagram className="w-4 h-4" />
             </a>
             <a href="#" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
-              <Twitter className="w-4 h-4" />
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a2.999 2.999 0 0 0-2.108-2.124C19.598 3.5 12 3.5 12 3.5s-7.598 0-9.39.562A2.999 2.999 0 0 0 .502 6.186C0 7.986 0 12 0 12s0 4.014.502 5.814a2.999 2.999 0 0 0 2.108 2.124C4.402 20.5 12 20.5 12 20.5s7.598 0 9.39-.562a2.999 2.999 0 0 0 2.108-2.124C24 16.014 24 12 24 12s0-4.014-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
             </a>
             <a href="#" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
-              <Linkedin className="w-4 h-4" />
+              <Twitter className="w-4 h-4" />
             </a>
           </div>
         </div>

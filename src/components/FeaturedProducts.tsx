@@ -49,7 +49,7 @@ const FeaturedProducts = () => {
           </div>
           <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300">
             <h3 className="text-xl font-bold text-primary mb-3">Apartments</h3>
-            <p className="text-wood-dark mb-4">Complete apartment solutions: 1BHK, 2BHK, and 3BHK interior designs.</p>
+            <p className="text-wood-dark mb-4">Complete apartment solutions: 1BHK, 2BHK, 3BHK, 4BHK, and 5BHK interior designs.</p>
             <button className="text-primary hover:text-primary/80 font-semibold">View Options →</button>
           </div>
         </div>

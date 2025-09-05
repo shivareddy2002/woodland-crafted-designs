@@ -6,8 +6,11 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Testimonials from "@/components/Testimonials";
+import QuoteGenerator from "@/components/QuoteGenerator";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 
 const Index = () => {
   return (
@@ -21,9 +24,14 @@ const Index = () => {
         <Services />
         <Portfolio />
         <WhyChooseUs />
+        <Testimonials />
+        <div id="quote-generator">
+          <QuoteGenerator />
+        </div>
         <Contact />
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   );
 };

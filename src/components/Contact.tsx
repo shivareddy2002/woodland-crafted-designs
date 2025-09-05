@@ -93,8 +93,8 @@ const Contact = () => {
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-primary">Service Areas</div>
-                      <div className="text-wood-dark">Local and surrounding regions</div>
+                      <div className="font-semibold text-primary">Address</div>
+                      <div className="text-wood-dark">Kadapa</div>
                     </div>
                   </CardContent>
                 </Card>
