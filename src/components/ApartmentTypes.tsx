@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import apartment1bhk from "@/assets/1bhk-apartment.jpg";
 import apartment2bhk from "@/assets/2bhk-apartment.jpg";
 import apartment3bhk from "@/assets/3bhk-apartment.jpg";
+import apartment4bhk from "@/assets/4bhk-apartment.jpg";
+import apartment5bhk from "@/assets/5bhk-apartment.jpg";
 
 const ApartmentTypes = () => {
   const apartments = [
@@ -27,6 +29,20 @@ const ApartmentTypes = () => {
       features: ["Luxury living", "Multiple bedrooms", "Custom wood work", "Entertainment spaces"],
       button: "View 3BHK",
     },
+    {
+      type: "4BHK Apartment",
+      size: "2400 sq.ft.",
+      image: apartment4bhk,
+      features: ["Premium interiors", "Master suite", "Study room", "Multiple storage areas"],
+      button: "View 4BHK",
+    },
+    {
+      type: "5BHK Apartment",
+      size: "3000+ sq.ft.",
+      image: apartment5bhk,
+      features: ["Ultra-luxury", "Penthouse design", "Premium finishes", "Entertainment rooms"],
+      button: "View 5BHK",
+    },
   ];
 
   return (
@@ -37,11 +53,11 @@ const ApartmentTypes = () => {
             Apartment Solutions
           </h2>
           <p className="text-lg text-wood-dark max-w-2xl mx-auto">
-            Complete wood furnishing solutions for apartments of all sizes. From compact 1BHK to spacious 3BHK layouts.
+            Complete wood furnishing solutions for apartments of all sizes. From compact 1BHK to luxurious 5BHK penthouses.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {apartments.map((apartment, index) => (
             <Card 
               key={index}

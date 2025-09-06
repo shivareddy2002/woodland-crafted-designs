@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import bedroomImage from "@/assets/bedroom-wood.jpg";
 import workUnitsImage from "@/assets/work-units-wood.jpg";
 import doorsWindowsImage from "@/assets/doors-windows-wood.jpg";
+import modularKitchenImage from "@/assets/modular-kitchen.jpg";
+import officeInteriorsImage from "@/assets/office-interiors.jpg";
 
 const FeaturedProducts = () => {
   const products = [
@@ -21,6 +23,16 @@ const FeaturedProducts = () => {
       description: "Premium wooden doors and window frames that enhance your home's security and aesthetic appeal. Weather-resistant and built to last.",
       image: doorsWindowsImage,
     },
+    {
+      title: "Modular Kitchens",
+      description: "Contemporary kitchen designs with smart storage solutions and premium wood cabinets. Functional layouts that enhance your culinary experience.",
+      image: modularKitchenImage,
+    },
+    {
+      title: "Office Interiors",
+      description: "Professional workspace designs with elegant wood finishes. Create productive environments with our custom office furniture and storage solutions.",
+      image: officeInteriorsImage,
+    },
   ];
 
   return (
@@ -35,26 +47,39 @@ const FeaturedProducts = () => {
           </p>
         </div>
 
-        {/* Additional Product Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300">
-            <h3 className="text-xl font-bold text-primary mb-3">Modular Kitchens</h3>
-            <p className="text-wood-dark mb-4">Contemporary kitchen solutions with premium wood cabinets and custom designs.</p>
-            <button className="text-primary hover:text-primary/80 font-semibold">Inquire →</button>
-          </div>
-          <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300">
-            <h3 className="text-xl font-bold text-primary mb-3">Office Interiors</h3>
-            <p className="text-wood-dark mb-4">Professional workspace solutions with elegant wooden furniture and storage.</p>
-            <button className="text-primary hover:text-primary/80 font-semibold">Inquire →</button>
-          </div>
-          <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300">
-            <h3 className="text-xl font-bold text-primary mb-3">Apartments</h3>
-            <p className="text-wood-dark mb-4">Complete apartment solutions: 1BHK, 2BHK, 3BHK, 4BHK, and 5BHK interior designs.</p>
-            <button className="text-primary hover:text-primary/80 font-semibold">View Options →</button>
+        {/* Apartment Solutions */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-primary text-center mb-8">Apartment Solutions</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <h4 className="text-lg font-bold text-primary mb-2">1BHK</h4>
+              <p className="text-wood-dark text-sm mb-3">Complete interior solution for 1 bedroom apartments</p>
+              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
+            </div>
+            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <h4 className="text-lg font-bold text-primary mb-2">2BHK</h4>
+              <p className="text-wood-dark text-sm mb-3">Comprehensive furnishing for 2 bedroom homes</p>
+              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
+            </div>
+            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <h4 className="text-lg font-bold text-primary mb-2">3BHK</h4>
+              <p className="text-wood-dark text-sm mb-3">Luxury interior design for spacious apartments</p>
+              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
+            </div>
+            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <h4 className="text-lg font-bold text-primary mb-2">4BHK</h4>
+              <p className="text-wood-dark text-sm mb-3">Premium solutions for large homes</p>
+              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
+            </div>
+            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <h4 className="text-lg font-bold text-primary mb-2">5BHK</h4>
+              <p className="text-wood-dark text-sm mb-3">Ultra-luxury penthouse interiors</p>
+              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {products.map((product, index) => (
             <Card 
               key={index} 

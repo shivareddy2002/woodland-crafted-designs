@@ -94,7 +94,25 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-primary">Address</div>
-                      <div className="text-wood-dark">Kadapa</div>
+                      <div className="text-wood-dark">Kadapa, Andhra Pradesh</div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Google Map */}
+                <Card className="border-wood-medium mt-6">
+                  <CardContent className="p-0">
+                    <div className="w-full h-64 rounded-lg overflow-hidden">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.56865533178!2d78.54713623671826!3d14.46667997779481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb34ddc98509c0f%3A0x8f88cae3de53ab5!2sKadapa%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1735733616044!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="IDL Location - Kadapa"
+                      />
                     </div>
                   </CardContent>
                 </Card>
