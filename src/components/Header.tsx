@@ -44,7 +44,7 @@ const Header = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-foreground hover:text-primary transition-all duration-300 font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left transform hover:-translate-y-0.5"
               >
                 {item.label}
               </button>
@@ -70,7 +70,7 @@ const Header = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-2 text-foreground hover:bg-wood-light transition-colors duration-200"
+                  className="block w-full text-left px-4 py-2 text-foreground hover:bg-wood-light hover:text-primary transition-all duration-300 transform hover:translate-x-1"
                 >
                   {item.label}
                 </button>

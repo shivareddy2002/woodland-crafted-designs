@@ -71,27 +71,6 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        {/* Featured Benefits */}
-        <div className="mt-16 bg-gradient-to-r from-primary/5 to-wood-accent/5 rounded-2xl p-8 md:p-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">10+</div>
-              <div className="text-wood-dark font-medium">Years of Excellence</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">500+</div>
-              <div className="text-wood-dark font-medium">Happy Customers</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-wood-dark font-medium">Satisfaction Rate</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">24/7</div>
-              <div className="text-wood-dark font-medium">Support Available</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

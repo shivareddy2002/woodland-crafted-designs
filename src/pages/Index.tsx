@@ -9,6 +9,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import QuoteGenerator from "@/components/QuoteGenerator";
 import Contact from "@/components/Contact";
+import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
@@ -29,6 +30,7 @@ const Index = () => {
           <QuoteGenerator />
         </div>
         <Contact />
+        <FindUs />
       </main>
       <Footer />
       <FloatingButtons />

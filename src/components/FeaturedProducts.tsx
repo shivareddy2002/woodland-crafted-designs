@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ProductInquiryModal from "@/components/ProductInquiryModal";
 import bedroomImage from "@/assets/bedroom-wood.jpg";
 import workUnitsImage from "@/assets/work-units-wood.jpg";
 import doorsWindowsImage from "@/assets/doors-windows-wood.jpg";
@@ -7,33 +9,56 @@ import modularKitchenImage from "@/assets/modular-kitchen.jpg";
 import officeInteriorsImage from "@/assets/office-interiors.jpg";
 
 const FeaturedProducts = () => {
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const products = [
     {
       title: "Bedroom Furniture",
-      description: "Transform your bedroom into a luxurious retreat with our premium wood furniture. Custom-crafted headboards, nightstands, and wardrobes that combine comfort with elegance.",
+      headline: "Elegant Bedrooms That Redefine Comfort",
+      description: "Premium wardrobes, luxury bed frames, modern & traditional styles.",
+      startingPrice: "₹30,000 onwards",
+      highlights: ["Custom wardrobes", "Premium finishes", "Sustainable wood"],
       image: bedroomImage,
     },
     {
-      title: "Work Units, TV Units & Dividers",
-      description: "Modern entertainment centers and workspace solutions. Our functional designs maximize space while maintaining the natural beauty of wood.",
+      title: "Work Units, TV Units & Dividers", 
+      headline: "Functional Designs for Modern Living",
+      description: "Modular TV units, dividers & workstations.",
+      startingPrice: "₹25,000 onwards",
+      highlights: ["Modular units", "Oak/walnut finishes", "Durable designs"],
       image: workUnitsImage,
     },
     {
       title: "Doors & Windows",
-      description: "Premium wooden doors and window frames that enhance your home's security and aesthetic appeal. Weather-resistant and built to last.",
+      headline: "Strong, Stylish, and Secure",
+      description: "Handcrafted wooden doors & windows.",
+      startingPrice: "₹15,000 onwards", 
+      highlights: ["Premium hardwood", "Weather-resistant", "Customized"],
       image: doorsWindowsImage,
     },
     {
       title: "Modular Kitchens",
-      description: "Contemporary kitchen designs with smart storage solutions and premium wood cabinets. Functional layouts that enhance your culinary experience.",
+      headline: "Kitchens That Inspire Culinary Creativity",
+      description: "Luxury modular kitchens, ergonomic layouts.",
+      startingPrice: "₹80,000 onwards",
+      highlights: ["Soft-close cabinets", "Water & heat resistant finishes"],
       image: modularKitchenImage,
     },
     {
       title: "Office Interiors",
-      description: "Professional workspace designs with elegant wood finishes. Create productive environments with our custom office furniture and storage solutions.",
+      headline: "Inspiring Workspaces for Productivity", 
+      description: "Ergonomic office interiors, executive cabins, conference rooms.",
+      startingPrice: "₹1,20,000 onwards",
+      highlights: ["Premium finishes", "Full setup solutions"],
       image: officeInteriorsImage,
     },
   ];
+
+  const handleInquireClick = (product: any) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
 
   return (
     <section id="products" className="py-20 bg-wood-light">
@@ -47,37 +72,6 @@ const FeaturedProducts = () => {
           </p>
         </div>
 
-        {/* Apartment Solutions */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-primary text-center mb-8">Apartment Solutions</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <h4 className="text-lg font-bold text-primary mb-2">1BHK</h4>
-              <p className="text-wood-dark text-sm mb-3">Complete interior solution for 1 bedroom apartments</p>
-              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
-            </div>
-            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <h4 className="text-lg font-bold text-primary mb-2">2BHK</h4>
-              <p className="text-wood-dark text-sm mb-3">Comprehensive furnishing for 2 bedroom homes</p>
-              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
-            </div>
-            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <h4 className="text-lg font-bold text-primary mb-2">3BHK</h4>
-              <p className="text-wood-dark text-sm mb-3">Luxury interior design for spacious apartments</p>
-              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
-            </div>
-            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <h4 className="text-lg font-bold text-primary mb-2">4BHK</h4>
-              <p className="text-wood-dark text-sm mb-3">Premium solutions for large homes</p>
-              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
-            </div>
-            <div className="bg-card p-6 rounded-lg border border-wood-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <h4 className="text-lg font-bold text-primary mb-2">5BHK</h4>
-              <p className="text-wood-dark text-sm mb-3">Ultra-luxury penthouse interiors</p>
-              <Button variant="outline" size="sm" className="w-full">Inquire</Button>
-            </div>
-          </div>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {products.map((product, index) => (
@@ -104,6 +98,7 @@ const FeaturedProducts = () => {
                 <Button 
                   variant="outline" 
                   className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                  onClick={() => handleInquireClick(product)}
                 >
                   Inquire
                 </Button>
@@ -111,6 +106,12 @@ const FeaturedProducts = () => {
             </Card>
           ))}
         </div>
+
+        <ProductInquiryModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          product={selectedProduct}
+        />
       </div>
     </section>
   );
