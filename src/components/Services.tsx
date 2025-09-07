@@ -6,7 +6,7 @@ const Services = () => {
     {
       icon: Hammer,
       title: "Custom Woodwork",
-      description: "Bespoke furniture and fixtures tailored to your exact specifications and space requirements.",
+      description: "Bespoke furniture and fixtures tailored to your exact specifications and space requirements perfectly.",
     },
     {
       icon: Home,

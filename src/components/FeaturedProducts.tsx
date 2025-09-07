@@ -22,9 +22,9 @@ const FeaturedProducts = () => {
       image: bedroomImage,
     },
     {
-      title: "Work Units, TV Units & Dividers", 
+      title: "TV Units", 
       headline: "Functional Designs for Modern Living",
-      description: "Modular TV units, dividers & workstations.",
+      description: "Modular TV units, Wooden dividers & workstations.",
       startingPrice: "₹25,000 onwards",
       highlights: ["Modular units", "Oak/walnut finishes", "Durable designs"],
       image: workUnitsImage,
@@ -77,7 +77,7 @@ const FeaturedProducts = () => {
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className="group overflow-hidden border-wood-medium hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group overflow-hidden border-wood-medium hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -88,16 +88,16 @@ const FeaturedProducts = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
-              <CardContent className="p-6 bg-gradient-to-b from-card to-wood-light">
+              <CardContent className="p-6 bg-gradient-to-b from-card to-wood-light flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-primary mb-3">
                   {product.title}
                 </h3>
-                <p className="text-wood-dark mb-6 leading-relaxed">
+                <p className="text-wood-dark mb-6 leading-relaxed flex-grow">
                   {product.description}
                 </p>
                 <Button 
                   variant="outline" 
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 mt-auto"
                   onClick={() => handleInquireClick(product)}
                 >
                   Inquire
