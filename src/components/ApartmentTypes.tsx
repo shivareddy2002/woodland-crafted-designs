@@ -61,7 +61,7 @@ const ApartmentTypes = () => {
           {apartments.map((apartment, index) => (
             <Card 
               key={index}
-              className="group overflow-hidden border-wood-medium hover:shadow-2xl transition-all duration-300"
+              className="group overflow-hidden border-wood-medium hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -74,12 +74,12 @@ const ApartmentTypes = () => {
                 </div>
               </div>
               
-              <CardContent className="p-6 bg-gradient-to-b from-card to-wood-light">
+              <CardContent className="p-6 bg-gradient-to-b from-card to-wood-light flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold text-primary mb-4">
                   {apartment.type}
                 </h3>
                 
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {apartment.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-wood-dark">
                       <div className="w-2 h-2 bg-wood-accent rounded-full mr-3"></div>
@@ -89,7 +89,7 @@ const ApartmentTypes = () => {
                 </ul>
 
                 <Button 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 mt-auto"
                 >
                   {apartment.button}
                 </Button>

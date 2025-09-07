@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">ID</span>
+                <span className="text-primary font-bold text-sm">IDL</span>
               </div>
               <div>
                 <div className="font-bold text-lg">In Design Land</div>
