@@ -23,20 +23,27 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-wood-light">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+          <button 
+            onClick={scrollToTop}
+            className="flex items-center space-x-2 group cursor-pointer transition-all duration-300 hover:scale-105"
+          >
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:shadow-lg transition-all duration-300">
               <span className="text-primary-foreground font-bold text-sm">IDL</span>
             </div>
             <div>
-              <div className="font-bold text-lg text-primary">In Design Land</div>
-              <div className="text-xs text-wood-medium -mt-1">Premium Wood Solutions</div>
+              <div className="font-bold text-lg text-primary group-hover:text-primary/80 transition-colors duration-300">In Design Land</div>
+              <div className="text-xs text-wood-medium -mt-1 group-hover:text-wood-dark transition-colors duration-300">Premium Wood Solutions</div>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -44,7 +51,7 @@ const Header = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-all duration-300 font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left transform hover:-translate-y-0.5"
+                className="text-foreground hover:text-wood-accent transition-all duration-300 ease-in-out font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wood-accent after:origin-bottom-right after:transition-transform after:duration-300 ease-in-out hover:after:scale-x-100 hover:after:origin-bottom-left transform hover:-translate-y-0.5"
               >
                 {item.label}
               </button>
@@ -70,7 +77,7 @@ const Header = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-2 text-foreground hover:bg-wood-light hover:text-primary transition-all duration-300 transform hover:translate-x-1"
+                  className="block w-full text-left px-4 py-2 text-foreground hover:bg-wood-light hover:text-wood-accent transition-all duration-300 ease-in-out transform hover:translate-x-1"
                 >
                   {item.label}
                 </button>

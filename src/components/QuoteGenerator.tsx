@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 const QuoteGenerator = () => {
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [selectedApartments, setSelectedApartments] = useState<string[]>([]);
   const [area, setArea] = useState("");
   const [estimatedCost, setEstimatedCost] = useState<number | null>(null);
 
@@ -27,6 +28,14 @@ const QuoteGenerator = () => {
     { name: "Doors & Windows", basePrice: 15000 },
   ];
 
+  const apartments = [
+    { name: "1BHK Apartment", price: 200000 },
+    { name: "2BHK Apartment", price: 400000 },
+    { name: "3BHK Apartment", price: 600000 },
+    { name: "4BHK Apartment", price: 800000 },
+    { name: "5BHK Apartment", price: 1200000 },
+  ];
+
   const handleMaterialToggle = (material: string) => {
     setSelectedMaterials(prev => 
       prev.includes(material) 
@@ -43,28 +52,46 @@ const QuoteGenerator = () => {
     );
   };
 
+  const handleApartmentToggle = (apartment: string) => {
+    setSelectedApartments(prev => 
+      prev.includes(apartment) 
+        ? prev.filter(a => a !== apartment)
+        : [...prev, apartment]
+    );
+  };
+
   const calculateQuote = () => {
-    if (selectedMaterials.length === 0 || selectedProducts.length === 0 || !area) {
+    if ((selectedMaterials.length === 0 && selectedProducts.length === 0 && selectedApartments.length === 0) || !area) {
       return;
     }
 
     const areaNum = parseFloat(area);
-    
-    // Calculate average material price
-    const totalMaterialPrice = selectedMaterials.reduce((sum, materialName) => {
-      const material = materials.find(m => m.name === materialName);
-      return sum + (material?.price || 0);
-    }, 0);
-    const avgMaterialPrice = totalMaterialPrice / selectedMaterials.length;
+    let cost = 0;
 
-    // Calculate total product base price
+    // Calculate material costs if any materials are selected
+    if (selectedMaterials.length > 0) {
+      const totalMaterialPrice = selectedMaterials.reduce((sum, materialName) => {
+        const material = materials.find(m => m.name === materialName);
+        return sum + (material?.price || 0);
+      }, 0);
+      const avgMaterialPrice = totalMaterialPrice / selectedMaterials.length;
+      cost += avgMaterialPrice * areaNum;
+    }
+
+    // Calculate product costs
     const totalProductPrice = selectedProducts.reduce((sum, productName) => {
       const product = products.find(p => p.name === productName);
       return sum + (product?.basePrice || 0);
     }, 0);
+    cost += totalProductPrice;
 
-    // Estimated Cost = (Average Material Price × Area) + Total Product Base Price
-    const cost = (avgMaterialPrice * areaNum) + totalProductPrice;
+    // Calculate apartment costs
+    const totalApartmentPrice = selectedApartments.reduce((sum, apartmentName) => {
+      const apartment = apartments.find(a => a.name === apartmentName);
+      return sum + (apartment?.price || 0);
+    }, 0);
+    cost += totalApartmentPrice;
+
     setEstimatedCost(cost);
   };
 
@@ -142,6 +169,31 @@ const QuoteGenerator = () => {
                     </div>
                   </div>
 
+                  {/* Apartment Pricing Section */}
+                  <div>
+                    <label className="block text-lg font-semibold text-primary mb-4">
+                      Apartment Pricing (Select Multiple)
+                    </label>
+                    <div className="grid grid-cols-1 gap-3">
+                      {apartments.map((apartment) => (
+                        <div
+                          key={apartment.name}
+                          onClick={() => handleApartmentToggle(apartment.name)}
+                          className={`p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
+                            selectedApartments.includes(apartment.name)
+                              ? 'border-primary bg-primary/5'
+                              : 'border-wood-medium hover:border-primary/50'
+                          }`}
+                        >
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium text-wood-dark">{apartment.name}</span>
+                            <span className="text-primary font-bold">₹{apartment.price.toLocaleString()}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Area Input */}
                   <div>
                     <label className="block text-lg font-semibold text-primary mb-3">
@@ -159,7 +211,7 @@ const QuoteGenerator = () => {
                   <Button 
                     onClick={calculateQuote}
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 text-lg"
-                    disabled={selectedMaterials.length === 0 || selectedProducts.length === 0 || !area}
+                    disabled={(selectedMaterials.length === 0 && selectedProducts.length === 0 && selectedApartments.length === 0) || !area}
                   >
                     <Calculator className="w-5 h-5 mr-2" />
                     Calculate Quote
@@ -195,6 +247,21 @@ const QuoteGenerator = () => {
                         ))
                       ) : (
                         <span className="text-wood-dark text-sm">No products selected</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary mb-3">Selected Apartments</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedApartments.length > 0 ? (
+                        selectedApartments.map((apartment) => (
+                          <Badge key={apartment} variant="secondary" className="text-sm">
+                            {apartment}
+                          </Badge>
+                        ))
+                      ) : (
+                        <span className="text-wood-dark text-sm">No apartments selected</span>
                       )}
                     </div>
                   </div>

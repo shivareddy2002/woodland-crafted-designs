@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ApartmentDetailModal from "@/components/ApartmentDetailModal";
 import apartment1bhk from "@/assets/1bhk-apartment.jpg";
 import apartment2bhk from "@/assets/2bhk-apartment.jpg";
 import apartment3bhk from "@/assets/3bhk-apartment.jpg";
@@ -7,6 +9,9 @@ import apartment4bhk from "@/assets/4bhk-apartment.jpg";
 import apartment5bhk from "@/assets/5bhk-apartment.jpg";
 
 const ApartmentTypes = () => {
+  const [selectedApartment, setSelectedApartment] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const apartments = [
     {
       type: "1BHK Apartment",
@@ -14,6 +19,14 @@ const ApartmentTypes = () => {
       image: apartment1bhk,
       features: ["Compact design", "Smart storage", "Modern wood finishes", "Ideal for singles/couples"],
       button: "View 1BHK",
+      bedrooms: 1,
+      bathrooms: 1,
+      halls: 1,
+      kitchens: 1,
+      balconies: 1,
+      extraFeatures: ["Smart storage solutions"],
+      highlights: ["Compact design", "Smart storage", "Modern wood finishes", "Ideal for singles/couples"],
+      price: "₹200,000 onwards"
     },
     {
       type: "2BHK Apartment", 
@@ -21,6 +34,14 @@ const ApartmentTypes = () => {
       image: apartment2bhk,
       features: ["Spacious layout", "Family-friendly", "Premium wood interiors", "Open kitchen concept"],
       button: "View 2BHK",
+      bedrooms: 2,
+      bathrooms: 2,
+      halls: 1,
+      kitchens: 1,
+      balconies: 1,
+      extraFeatures: ["Open kitchen concept"],
+      highlights: ["Spacious layout", "Family-friendly", "Premium wood interiors", "Open kitchen concept"],
+      price: "₹400,000 onwards"
     },
     {
       type: "3BHK Apartment",
@@ -28,6 +49,14 @@ const ApartmentTypes = () => {
       image: apartment3bhk,
       features: ["Luxury living", "Multiple bedrooms", "Custom wood work", "Entertainment spaces"],
       button: "View 3BHK",
+      bedrooms: 3,
+      bathrooms: 2,
+      halls: 1,
+      kitchens: 1,
+      balconies: 2,
+      extraFeatures: ["Entertainment room", "Walk-in closet"],
+      highlights: ["Luxury living", "Multiple bedrooms", "Custom wood work", "Entertainment spaces"],
+      price: "₹600,000 onwards"
     },
     {
       type: "4BHK Apartment",
@@ -35,6 +64,14 @@ const ApartmentTypes = () => {
       image: apartment4bhk,
       features: ["Premium interiors", "Master suite", "Study room", "Multiple storage areas"],
       button: "View 4BHK",
+      bedrooms: 4,
+      bathrooms: 3,
+      halls: 1,
+      kitchens: 1,
+      balconies: 2,
+      extraFeatures: ["Master suite", "Study room", "Walk-in closet"],
+      highlights: ["Premium interiors", "Master suite", "Study room", "Multiple storage areas"],
+      price: "₹800,000 onwards"
     },
     {
       type: "5BHK Apartment",
@@ -42,8 +79,21 @@ const ApartmentTypes = () => {
       image: apartment5bhk,
       features: ["Ultra-luxury", "Penthouse design", "Premium finishes", "Entertainment rooms"],
       button: "View 5BHK",
+      bedrooms: 5,
+      bathrooms: 4,
+      halls: 2,
+      kitchens: 1,
+      balconies: 3,
+      extraFeatures: ["Entertainment room", "Home theater", "Walk-in closet", "Terrace garden"],
+      highlights: ["Ultra-luxury", "Penthouse design", "Premium finishes", "Entertainment rooms"],
+      price: "₹1,200,000 onwards"
     },
   ];
+
+  const handleViewApartment = (apartment: any) => {
+    setSelectedApartment(apartment);
+    setIsModalOpen(true);
+  };
 
   return (
     <section id="apartments" className="py-20 bg-background">
@@ -89,6 +139,7 @@ const ApartmentTypes = () => {
                 </ul>
 
                 <Button 
+                  onClick={() => handleViewApartment(apartment)}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 mt-auto"
                 >
                   {apartment.button}
@@ -97,6 +148,13 @@ const ApartmentTypes = () => {
             </Card>
           ))}
         </div>
+
+        {/* Apartment Detail Modal */}
+        <ApartmentDetailModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          apartment={selectedApartment}
+        />
       </div>
     </section>
   );
