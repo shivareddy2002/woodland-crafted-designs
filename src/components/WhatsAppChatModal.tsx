@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X, Send, MessageCircle, User } from "lucide-react";
@@ -21,7 +21,13 @@ const WhatsAppChatModal = ({ isOpen, onClose }: WhatsAppChatModalProps) => {
     const phoneNumber = "919346493592";
     const encodedMessage = encodeURIComponent(text || "Hi, I am interested in your services.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
+    const a = document.createElement('a');
+    a.href = whatsappUrl;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
     onClose();
   };
 
@@ -42,10 +48,14 @@ const WhatsAppChatModal = ({ isOpen, onClose }: WhatsAppChatModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-md p-0 bg-white border-none shadow-2xl overflow-hidden rounded-2xl">
+        <DialogHeader className="sr-only">
+          <DialogTitle>WhatsApp Support</DialogTitle>
+          <DialogDescription>Chat with us on WhatsApp</DialogDescription>
+        </DialogHeader>
         {/* Header */}
         <div className="bg-green-500 text-white p-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="font-medium">Customer Support</span>
+            <span className="font-medium">WhatsApp Support</span>
           </div>
           <button 
             onClick={onClose}
@@ -58,10 +68,7 @@ const WhatsAppChatModal = ({ isOpen, onClose }: WhatsAppChatModalProps) => {
         {/* Chat Content */}
         <div className="p-6 space-y-6 bg-gray-50">
           {/* Welcome Message */}
-          <div className="flex items-start space-x-3">
-            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
-              <User className="w-5 h-5 text-gray-600" />
-            </div>
+          <div className="flex">
             <div className="bg-green-500 text-white px-4 py-2 rounded-2xl rounded-tl-md max-w-xs">
               <p className="text-sm">👋 Hi! How can we help?</p>
             </div>

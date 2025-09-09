@@ -18,19 +18,17 @@ const FloatingButtons = () => {
       {/* WhatsApp Button */}
       <div className="relative group">
         {/* Notification Badge */}
-        <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold animate-pulse z-10">
+        <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold z-10">
           1
         </div>
         
         {/* Main Button */}
         <button
           onClick={() => setIsWhatsAppModalOpen(true)}
-          className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110"
+          className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
         >
           <MessageCircle className="w-7 h-7" />
           
-          {/* Subtle Pulse Effect */}
-          <div className="absolute inset-0 rounded-full bg-green-400 opacity-20 animate-pulse"></div>
         </button>
         
         {/* Enhanced Tooltip */}
