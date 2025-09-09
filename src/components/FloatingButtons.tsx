@@ -25,12 +25,12 @@ const FloatingButtons = () => {
         {/* Main Button */}
         <button
           onClick={() => setIsWhatsAppModalOpen(true)}
-          className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 animate-bounce"
+          className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110"
         >
           <MessageCircle className="w-7 h-7" />
           
-          {/* Pulse Effect */}
-          <div className="absolute inset-0 rounded-full bg-green-400 opacity-30 animate-ping"></div>
+          {/* Subtle Pulse Effect */}
+          <div className="absolute inset-0 rounded-full bg-green-400 opacity-20 animate-pulse"></div>
         </button>
         
         {/* Enhanced Tooltip */}
