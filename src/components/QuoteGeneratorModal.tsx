@@ -102,15 +102,15 @@ const QuoteGeneratorModal = ({ isOpen, onClose }: QuoteGeneratorModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl max-h-[90vh] p-0 bg-white overflow-hidden">
-        <DialogHeader className="p-6 border-b border-wood-light bg-gradient-to-r from-primary/5 to-wood-light">
+      <DialogContent className="max-w-6xl max-h-[95vh] p-0 bg-white flex flex-col">
+        <DialogHeader className="p-4 sm:p-6 border-b border-wood-light bg-gradient-to-r from-primary/5 to-wood-light flex-shrink-0">
           <div className="flex items-center justify-between">
             <div>
-              <DialogTitle className="text-3xl font-bold text-primary flex items-center">
-                <Calculator className="w-8 h-8 mr-3" />
+              <DialogTitle className="text-2xl sm:text-3xl font-bold text-primary flex items-center">
+                <Calculator className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3" />
                 Instant Quote Generator
               </DialogTitle>
-              <p className="text-wood-dark mt-2">
+              <p className="text-wood-dark mt-2 text-sm sm:text-base">
                 Get an estimated cost for your wood project instantly. Select materials and products to see pricing.
               </p>
             </div>
@@ -118,24 +118,24 @@ const QuoteGeneratorModal = ({ isOpen, onClose }: QuoteGeneratorModalProps) => {
               variant="ghost"
               size="sm"
               onClick={onClose}
-              className="h-8 w-8 p-0"
+              className="h-8 w-8 p-0 flex-shrink-0"
             >
               <X className="h-4 w-4" />
             </Button>
           </div>
         </DialogHeader>
 
-        <div className="p-6 overflow-y-auto">
-          <Card className="border-wood-medium shadow-lg">
-            <CardHeader className="bg-gradient-to-r from-primary/5 to-wood-light border-b border-wood-medium">
-              <CardTitle className="text-xl text-primary">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+          <Card className="border-wood-medium shadow-lg h-full flex flex-col">
+            <CardHeader className="bg-gradient-to-r from-primary/5 to-wood-light border-b border-wood-medium flex-shrink-0">
+              <CardTitle className="text-lg sm:text-xl text-primary">
                 Calculate Your Project Cost
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <CardContent className="p-4 sm:p-6 flex-1 overflow-y-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 h-full">
                 {/* Input Section */}
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6 overflow-y-auto max-h-[60vh] lg:max-h-full pr-2">
                   {/* Material Selection */}
                   <div>
                     <label className="block text-sm font-semibold text-primary mb-3">
@@ -236,7 +236,7 @@ const QuoteGeneratorModal = ({ isOpen, onClose }: QuoteGeneratorModalProps) => {
                 </div>
 
                 {/* Result Section */}
-                <div className="space-y-4">
+                <div className="space-y-4 overflow-y-auto max-h-[60vh] lg:max-h-full pr-2">
                   {/* Selected Items */}
                   <div>
                     <h3 className="text-sm font-semibold text-primary mb-2">Selected Materials</h3>
