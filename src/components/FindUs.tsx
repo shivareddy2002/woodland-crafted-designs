@@ -53,14 +53,14 @@ const FindUs = () => {
           {/* Google Map */}
           <div className="h-full min-h-[400px] lg:min-h-[500px] rounded-lg overflow-hidden border border-wood-medium shadow-lg">
             <iframe
-              src="https://www.google.com/maps/place/Idl+%7C+In+Design+Land/@14.4859698,78.7043042,13.88z/data=!4m6!3m5!1s0x3bb377561091309f:0x874d06dd5821b814!8m2!3d14.4958295!4d78.7324446!16s%2Fg%2F11ycz07qpg?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D"
+              src="https://www.google.com/maps?q=Kopparthi+industrial+Hub,+Plot+No-55,+APIIC,+Kadapa,+Kopparthi,+Andhra+Pradesh+516293&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="IDL Location Map"
+              title="Kopparthi Industrial Hub Location Map"
             ></iframe>
           </div>
         </div>
