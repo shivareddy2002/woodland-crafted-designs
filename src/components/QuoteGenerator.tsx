@@ -10,15 +10,20 @@ const QuoteGenerator = () => {
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
   const [selectedApartments, setSelectedApartments] = useState<string[]>([]);
+  const [selectedCommercial, setSelectedCommercial] = useState<string[]>([]);
   const [area, setArea] = useState("");
   const [estimatedCost, setEstimatedCost] = useState<number | null>(null);
 
   const materials = [
-    { name: "Teak Wood", price: 2500 },
-    { name: "Rosewood", price: 3200 },
-    { name: "Oak Wood", price: 2000 },
-    { name: "Walnut", price: 2800 },
-    { name: "Plywood", price: 1200 },
+    { name: "Hdhmr Board", price: 120 },
+    { name: "Phenolic Board", price: 150 },
+    { name: "Plain MDF Board", price: 90 },
+    { name: "Grey Board", price: 80 },
+    { name: "Laminated Board", price: 140 },
+    { name: "Soft Board", price: 60 },
+    { name: "Hard Board", price: 100 },
+    { name: "WPC Board", price: 130 },
+    { name: "Wood Board", price: 110 },
   ];
 
   const products = [
@@ -26,6 +31,13 @@ const QuoteGenerator = () => {
     { name: "Kitchen", basePrice: 80000 },
     { name: "Office Interiors", basePrice: 120000 },
     { name: "Doors & Windows", basePrice: 15000 },
+  ];
+
+  const commercialProjects = [
+    { name: "Office Interiors", price: 2000 },
+    { name: "Hotels & Resorts", price: 2500 },
+    { name: "Hospitals & Clinics", price: 2200 },
+    { name: "Retail Stores", price: 1800 },
   ];
 
   const apartments = [
@@ -60,8 +72,16 @@ const QuoteGenerator = () => {
     );
   };
 
+  const handleCommercialToggle = (commercial: string) => {
+    setSelectedCommercial(prev => 
+      prev.includes(commercial) 
+        ? prev.filter(c => c !== commercial)
+        : [...prev, commercial]
+    );
+  };
+
   const calculateQuote = () => {
-    if ((selectedMaterials.length === 0 && selectedProducts.length === 0 && selectedApartments.length === 0) || !area) {
+    if ((selectedMaterials.length === 0 && selectedProducts.length === 0 && selectedApartments.length === 0 && selectedCommercial.length === 0) || !area) {
       return;
     }
 
@@ -91,6 +111,15 @@ const QuoteGenerator = () => {
       return sum + (apartment?.price || 0);
     }, 0);
     cost += totalApartmentPrice;
+
+    // Calculate commercial costs
+    if (selectedCommercial.length > 0) {
+      const totalCommercialPrice = selectedCommercial.reduce((sum, commercialName) => {
+        const commercial = commercialProjects.find(c => c.name === commercialName);
+        return sum + ((commercial?.price || 0) * areaNum);
+      }, 0);
+      cost += totalCommercialPrice;
+    }
 
     setEstimatedCost(cost);
   };
@@ -194,6 +223,31 @@ const QuoteGenerator = () => {
                     </div>
                   </div>
 
+                  {/* Commercial Projects Section */}
+                  <div>
+                    <label className="block text-lg font-semibold text-primary mb-4">
+                      Commercial Projects (Select Multiple)
+                    </label>
+                    <div className="grid grid-cols-1 gap-3">
+                      {commercialProjects.map((commercial) => (
+                        <div
+                          key={commercial.name}
+                          onClick={() => handleCommercialToggle(commercial.name)}
+                          className={`p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
+                            selectedCommercial.includes(commercial.name)
+                              ? 'border-primary bg-primary/5'
+                              : 'border-wood-medium hover:border-primary/50'
+                          }`}
+                        >
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium text-wood-dark">{commercial.name}</span>
+                            <span className="text-primary font-bold">Starting from ₹{commercial.price}/sq.ft</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Area Input */}
                   <div>
                     <label className="block text-lg font-semibold text-primary mb-3">
@@ -211,7 +265,7 @@ const QuoteGenerator = () => {
                   <Button 
                     onClick={calculateQuote}
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 text-lg"
-                    disabled={(selectedMaterials.length === 0 && selectedProducts.length === 0 && selectedApartments.length === 0) || !area}
+                    disabled={(selectedMaterials.length === 0 && selectedProducts.length === 0 && selectedApartments.length === 0 && selectedCommercial.length === 0) || !area}
                   >
                     <Calculator className="w-5 h-5 mr-2" />
                     Calculate Quote
@@ -266,6 +320,21 @@ const QuoteGenerator = () => {
                     </div>
                   </div>
 
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary mb-3">Selected Commercial</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCommercial.length > 0 ? (
+                        selectedCommercial.map((commercial) => (
+                          <Badge key={commercial} variant="secondary" className="text-sm">
+                            {commercial}
+                          </Badge>
+                        ))
+                      ) : (
+                        <span className="text-wood-dark text-sm">No commercial projects selected</span>
+                      )}
+                    </div>
+                  </div>
+
                   {/* Cost Estimate */}
                   {estimatedCost && (
                     <Card className="border-primary bg-primary/5">
@@ -298,7 +367,7 @@ const QuoteGenerator = () => {
                       </p>
                       <div className="space-y-2">
                         <a 
-                          href="https://wa.me/919346493592"
+                          href="https://wa.me/919555222567"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm font-semibold"
@@ -306,7 +375,7 @@ const QuoteGenerator = () => {
                           Get Detailed Quote on WhatsApp
                         </a>
                         <a 
-                          href="tel:+919346493592"
+                          href="tel:+919555222567"
                           className="block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm font-semibold"
                         >
                           Call for Consultation

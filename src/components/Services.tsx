@@ -26,7 +26,7 @@ const Services = () => {
     {
       icon: TreePine,
       title: "Sustainable Materials",
-      description: "Eco-friendly wood sourcing with FSC-certified materials for environmentally conscious projects.",
+      description: "Eco-friendly wood sourcing with ISO-certified materials for environmentally conscious projects.",
     },
     {
       icon: Shield,
@@ -80,18 +80,18 @@ const Services = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://wa.me/919346493592"
+                href="https://wa.me/919555222567"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold"
               >
-                WhatsApp: 9346493592
+                WhatsApp: 9555222567
               </a>
               <a 
-                href="mailto:lsgr0070@gmail.com"
+                href="mailto:indesignland@gmail.com"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold"
               >
-                Email: lsgr0070@gmail.com
+                Email: indesignland@gmail.com
               </a>
             </div>
           </div>

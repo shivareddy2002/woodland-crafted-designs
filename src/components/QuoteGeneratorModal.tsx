@@ -310,7 +310,7 @@ const QuoteGeneratorModal = ({ isOpen, onClose }: QuoteGeneratorModalProps) => {
                       </p>
                       <div className="space-y-2">
                         <a 
-                          href="https://wa.me/919346493592"
+                          href="https://wa.me/919555222567"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block w-full px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 text-xs font-semibold"
@@ -318,7 +318,7 @@ const QuoteGeneratorModal = ({ isOpen, onClose }: QuoteGeneratorModalProps) => {
                           Get Detailed Quote on WhatsApp
                         </a>
                         <a 
-                          href="tel:+919346493592"
+                          href="tel:+919555222567"
                           className="block w-full px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 text-xs font-semibold"
                         >
                           Call for Consultation

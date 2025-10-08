@@ -18,7 +18,7 @@ const WhatsAppChatModal = ({ isOpen, onClose }: WhatsAppChatModalProps) => {
   ];
 
   const sendToWhatsApp = (text: string) => {
-    const phoneNumber = "919346493592";
+    const phoneNumber = "919555222567";
     const encodedMessage = encodeURIComponent(text || "Hi, I am interested in your services.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     const a = document.createElement('a');

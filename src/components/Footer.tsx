@@ -54,16 +54,16 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div>
                 <div className="font-semibold">Phone:</div>
-                <div className="opacity-90">+91 9346493592</div>
+                <div className="opacity-90">+91 9555222567</div>
               </div>
               <div>
                 <div className="font-semibold">Email:</div>
-                <div className="opacity-90">lsgr0070@gmail.com</div>
+                <div className="opacity-90">indesignland@gmail.com</div>
               </div>
               <div>
                 <div className="font-semibold">WhatsApp:</div>
                 <a 
-                  href="https://wa.me/919346493592"
+                  href="https://wa.me/919555222567"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="opacity-90 hover:opacity-100 transition-opacity"
@@ -80,9 +80,7 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-sm opacity-90">
-            © {currentYear} In Design Land - Premium Wood Solutions. All rights reserved.
-          </div>
+          {/* Copyright line removed as requested */}
           
           {/* Social Media Icons */}
           <div className="flex space-x-4">

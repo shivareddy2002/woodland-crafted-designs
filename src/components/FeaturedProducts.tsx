@@ -55,7 +55,7 @@ const FeaturedProducts = () => {
     },
   ];
 
-  const handleInquireClick = (product: any) => {
+  const handleEnquiryClick = (product: any) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
   };
@@ -98,9 +98,9 @@ const FeaturedProducts = () => {
                 <Button 
                   variant="outline" 
                   className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 mt-auto"
-                  onClick={() => handleInquireClick(product)}
+                  onClick={() => handleEnquiryClick(product)}
                 >
-                  Inquire
+                  Enquiry
                 </Button>
               </CardContent>
             </Card>

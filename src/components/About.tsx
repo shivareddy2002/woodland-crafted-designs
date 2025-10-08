@@ -59,7 +59,7 @@ const About = () => {
                   <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-primary/10 rounded-full">
                     <Award className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-3xl font-bold text-primary mb-2">10+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">8+</div>
                   <div className="text-wood-dark font-medium">Years Experience</div>
                 </div>
                 
@@ -67,7 +67,7 @@ const About = () => {
                   <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-primary/10 rounded-full">
                     <Target className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">100+</div>
                   <div className="text-wood-dark font-medium">Projects Completed</div>
                 </div>
                 
@@ -110,6 +110,25 @@ const About = () => {
                       <span>Timely delivery and professional service</span>
                     </li>
                   </ul>
+                </div>
+
+                {/* Personal Info */}
+                <div className="p-6 bg-card rounded-lg border border-wood-medium shadow-md">
+                  <h4 className="text-lg font-bold text-primary mb-4">Meet Our Architect</h4>
+                  <div className="space-y-2 text-wood-dark">
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold">Name:</span>
+                      <span>Sreekanth Reddy</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold">Profession:</span>
+                      <span>Architect</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold">Phone:</span>
+                      <a href="tel:+919555222567" className="text-primary hover:underline">9555222567</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

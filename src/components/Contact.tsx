@@ -59,7 +59,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <div className="font-semibold text-primary">Phone</div>
-                        <div className="text-wood-dark">+91 9346493592</div>
+                        <div className="text-wood-dark">+91 9555222567</div>
                       </div>
                     </CardContent>
                   </Card>
@@ -71,7 +71,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <div className="font-semibold text-primary">Email</div>
-                        <div className="text-wood-dark">lsgr0070@gmail.com</div>
+                        <div className="text-wood-dark">indesignland@gmail.com</div>
                       </div>
                     </CardContent>
                   </Card>
@@ -106,7 +106,7 @@ const Contact = () => {
                   <h4 className="text-lg font-bold text-primary">Quick Contact</h4>
                   <div className="space-y-3">
                     <a 
-                      href="https://wa.me/919346493592"
+                      href="https://wa.me/919555222567"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-full px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold"
@@ -115,7 +115,7 @@ const Contact = () => {
                       Chat on WhatsApp
                     </a>
                     <a 
-                      href="tel:+919346493592"
+                      href="tel:+919555222567"
                       className="flex items-center justify-center w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold"
                     >
                       <Phone className="w-5 h-5 mr-2" />

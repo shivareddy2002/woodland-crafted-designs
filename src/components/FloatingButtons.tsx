@@ -43,7 +43,7 @@ const FloatingButtons = () => {
       {/* Phone Button */}
       <div className="relative group">
         <a
-          href="tel:+919346493592"
+          href="tel:+919555222567"
           className="flex items-center justify-center w-14 h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         >
           <Phone className="w-6 h-6" />

@@ -9,7 +9,7 @@ const FindUs = () => {
             Find Us
           </h2>
           <p className="text-lg text-wood-dark max-w-2xl mx-auto">
-            Visit our showroom and workshop to see our premium wood solutions in person. We're located in the heart of Kadapa.
+            Visit our showroom and workshop to see our premium wood solutions in person. We're located at IDL.
           </p>
         </div>
 
@@ -24,7 +24,7 @@ const FindUs = () => {
                   <div>
                     <h4 className="font-semibold text-wood-dark mb-2">Address</h4>
                     <p className="text-wood-dark">
-                      Kadapa, Andhra Pradesh, India
+                      IDL, Andhra Pradesh, India
                     </p>
                   </div>
                   
@@ -53,14 +53,14 @@ const FindUs = () => {
           {/* Google Map */}
           <div className="h-full min-h-[400px] lg:min-h-[500px] rounded-lg overflow-hidden border border-wood-medium shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84627092023!2d78.56073842500001!3d14.4673969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb3b4f4d6b7e7e7%3A0x9b5e3b4b5e3b4b5e!2sKadapa%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1635759847123!5m2!1sen!2sin"
+              src="https://www.google.com/maps/place/Idl+%7C+In+Design+Land/@14.4859698,78.7043042,13.88z/data=!4m6!3m5!1s0x3bb377561091309f:0x874d06dd5821b814!8m2!3d14.4958295!4d78.7324446!16s%2Fg%2F11ycz07qpg?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Kadapa Location Map"
+              title="IDL Location Map"
             ></iframe>
           </div>
         </div>
