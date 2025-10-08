@@ -24,7 +24,7 @@ const FindUs = () => {
                   <div>
                     <h4 className="font-semibold text-wood-dark mb-2">Address</h4>
                     <p className="text-wood-dark">
-                      IDL, Andhra Pradesh, India
+                      Kopparthi industrial Hub, Plot No-55, APIIC, Kadapa, Kopparthi, Andhra Pradesh 516293
                     </p>
                   </div>
                   
