@@ -17,7 +17,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 h-full">
             {/* Content Section */}
-            <div className="space-y-6 overflow-y-auto max-h-[70vh] pr-4">
+            <div className="space-y-6">
               <div className="space-y-4">
                 <p className="text-lg text-wood-dark leading-relaxed">
                   At IDL, we bring passion and precision into every detail of woodcraft. From timeless bedroom designs to modern kitchens and custom interiors, we deliver solutions that blend beauty, durability, and sustainability.
@@ -53,7 +53,7 @@ const About = () => {
             </div>
 
             {/* Statistics Section */}
-            <div className="space-y-8 overflow-y-auto max-h-[70vh] pr-4">
+            <div className="space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="text-center p-6 bg-card rounded-lg border border-wood-medium group hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-primary/10 rounded-full">
