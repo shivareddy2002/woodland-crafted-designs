@@ -90,27 +90,6 @@ const About = () => {
 
               {/* Additional Content Space for Future Use */}
               <div className="space-y-4">
-                <div className="p-6 bg-gradient-to-r from-primary/5 to-wood-light rounded-lg border border-wood-medium">
-                  <h4 className="text-lg font-bold text-primary mb-3">Why Choose In Design Land?</h4>
-                  <ul className="space-y-2 text-wood-dark">
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Expert craftsmanship with modern techniques</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Sustainable and eco-friendly materials</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Custom solutions for every space</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Timely delivery and professional service</span>
-                    </li>
-                  </ul>
-                </div>
 
                 {/* Personal Info */}
                 <div className="p-6 bg-card rounded-lg border border-wood-medium shadow-md">
