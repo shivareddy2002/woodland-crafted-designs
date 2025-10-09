@@ -20,11 +20,7 @@ const About = () => {
             <div className="space-y-6">
               <div className="space-y-4">
                 <p className="text-lg text-wood-dark leading-relaxed">
-                  At IDL, we bring passion and precision into every detail of woodcraft. From timeless bedroom designs to modern kitchens and custom interiors, we deliver solutions that blend beauty, durability, and sustainability.
-                </p>
-                
-                <p className="text-lg text-wood-dark leading-relaxed">
-                  Our commitment to quality craftsmanship is evident in every piece we create. From custom furniture to architectural elements, we source only the finest sustainable wood materials and employ traditional techniques combined with modern innovation.
+                  At IDL, we bring passion and precision into every detail of woodcraft. From timeless bedroom designs to modern kitchens and custom interiors, we deliver solutions that blend beauty, durability, and sustainability. Our commitment to quality craftsmanship is evident in every piece we create. From custom furniture to architectural elements, we source only the finest sustainable wood materials and employ traditional techniques combined with modern innovation. Each project is a reflection of our dedication to excellence, tailored to meet the unique vision and lifestyle of every client. With IDL, every space becomes a harmonious blend of artistry, functionality, and enduring elegance.
                 </p>
               </div>
 
