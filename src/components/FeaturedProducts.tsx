@@ -7,6 +7,7 @@ import workUnitsImage from "@/assets/work-units-wood.jpg";
 import doorsWindowsImage from "@/assets/doors-windows-wood.jpg";
 import modularKitchenImage from "@/assets/modular-kitchen.jpg";
 import officeInteriorsImage from "@/assets/office-interiors.jpg";
+import hotelsResortsImage from "@/assets/hotels-resorts.jpg";
 
 const FeaturedProducts = () => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -53,6 +54,14 @@ const FeaturedProducts = () => {
       highlights: ["Premium finishes", "Full setup solutions"],
       image: officeInteriorsImage,
     },
+    {
+      title: "Hotels & Resorts",
+      headline: "Luxurious Hospitality Interiors",
+      description: "Premium hotel lobbies, resort rooms, elegant reception areas.",
+      startingPrice: "₹2,50,000 onwards",
+      highlights: ["Luxury finishes", "Custom hospitality designs", "Premium wood"],
+      image: hotelsResortsImage,
+    },
   ];
 
   const handleEnquiryClick = (product: any) => {
@@ -73,7 +82,7 @@ const FeaturedProducts = () => {
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <Card 
               key={index} 
