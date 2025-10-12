@@ -1,48 +1,74 @@
 import { useState } from "react";
+import { MapPin, Quote } from "lucide-react";
 import portfolioBedroomImage from "@/assets/portfolio-bedroom.jpg";
 import portfolioKitchenImage from "@/assets/portfolio-kitchen.jpg";
 import portfolioDoorsImage from "@/assets/portfolio-doors.jpg";
 import portfolioCabinetsImage from "@/assets/portfolio-cabinets.jpg";
 import portfolioOfficeImage from "@/assets/portfolio-office.jpg";
 import portfolioApartmentImage from "@/assets/portfolio-apartment.jpg";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Portfolio = () => {
   const portfolioItems = [
     {
-      title: "Premium Bedroom Interior",
+      title: "Modern Oak-Finish Bedroom",
       category: "Bedroom",
       image: portfolioBedroomImage,
-      description: "Custom wooden bedroom with elegant headboard and premium furniture",
+      customer: "Mr. Ramesh",
+      location: "Hyderabad",
+      description: "A modern oak-finish bedroom with built-in wardrobes and ambient lighting. Designed for comfort and elegance.",
+      highlights: "Custom wardrobes, ambient LED lighting, premium oak finish",
+      testimonial: "Absolutely loved the craftsmanship and attention to detail.",
     },
     {
-      title: "Modern Kitchen Design",
+      title: "Modular Kitchen Design",
       category: "Kitchen",
       image: portfolioKitchenImage,
-      description: "Contemporary kitchen with premium wood cabinets and island",
+      customer: "Mrs. Kavya",
+      location: "Bengaluru",
+      description: "A modular kitchen with matte white finish, quartz countertop, and soft-close drawers.",
+      highlights: "Quartz countertop, soft-close drawers, matte white finish",
+      testimonial: "Our kitchen feels luxurious and practical — great work!",
     },
     {
-      title: "Wooden Doors & Windows",
+      title: "Custom Teakwood Main Door",
       category: "Doors",
       image: portfolioDoorsImage,
-      description: "Premium wooden doors and window frames installation",
+      customer: "Mr. Prakash",
+      location: "Chennai",
+      description: "Custom teakwood main door with intricate carvings and polished finish for durability and charm.",
+      highlights: "Intricate carvings, premium teakwood, weather-resistant finish",
+      testimonial: "The door transformed our home's entrance beautifully.",
     },
     {
-      title: "Storage Solutions",
+      title: "Sleek Living Room Cabinets",
       category: "Cabinets",
       image: portfolioCabinetsImage,
-      description: "Custom wooden storage cabinets and shelving units",
+      customer: "Mrs. Ananya",
+      location: "Pune",
+      description: "Sleek living room cabinets with floating shelves and hidden lighting for a modern aesthetic.",
+      highlights: "Floating shelves, hidden LED strips, space optimization",
+      testimonial: "Perfectly blends style with functionality.",
     },
     {
-      title: "Office Interiors",
+      title: "Corporate Workspace Interiors",
       category: "Office",
       image: portfolioOfficeImage,
-      description: "Professional wooden office furniture and interiors",
+      customer: "TechWave Pvt. Ltd.",
+      location: "Hyderabad",
+      description: "Workspace interiors designed for functionality and aesthetics — walnut panels and ergonomic furniture.",
+      highlights: "Walnut wood panels, ergonomic design, cable management",
+      testimonial: "Our team loves the new workspace ambiance.",
     },
     {
-      title: "Apartment Design",
+      title: "Complete Apartment Interiors",
       category: "Apartment",
       image: portfolioApartmentImage,
-      description: "Complete apartment interior with wooden elements",
+      customer: "Mr. & Mrs. Sharma",
+      location: "Vizag",
+      description: "Complete apartment interiors — modern minimalist theme using sustainable wood and soft lighting.",
+      highlights: "Sustainable materials, minimalist design, end-to-end execution",
+      testimonial: "Every room reflects our personality perfectly.",
     },
   ];
 
@@ -85,30 +111,59 @@ const Portfolio = () => {
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item, index) => (
-            <div 
+            <Card 
               key={index}
-              className="group relative overflow-hidden rounded-lg border border-wood-medium hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-border bg-card"
             >
               <div className="relative overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  alt={`${item.title} - ${item.customer}, ${item.location}`}
+                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="inline-block px-3 py-1 bg-wood-accent text-white text-sm rounded-full mb-2">
+                <div className="absolute top-4 right-4">
+                  <span className="inline-block px-4 py-1.5 bg-primary/90 backdrop-blur-sm text-primary-foreground text-sm font-medium rounded-full shadow-lg">
                     {item.category}
                   </span>
-                  <h3 className="text-xl font-bold text-white mb-1">
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              <CardContent className="p-6 space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-white/90 text-sm">
-                    {item.description}
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                    <MapPin className="w-4 h-4" />
+                    <span className="font-medium">{item.customer}</span>
+                    <span>•</span>
+                    <span>{item.location}</span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+
+                <div className="pt-2 border-t border-border">
+                  <p className="text-xs text-muted-foreground mb-2 font-medium">Project Highlights:</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">
+                    {item.highlights}
                   </p>
                 </div>
-              </div>
-            </div>
+
+                <div className="bg-muted/50 p-4 rounded-lg relative">
+                  <Quote className="w-5 h-5 text-primary/40 absolute top-3 left-3" />
+                  <p className="text-sm italic text-foreground/90 pl-6">
+                    "{item.testimonial}"
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2 pl-6">
+                    — {item.customer}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
