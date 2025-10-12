@@ -8,6 +8,7 @@ import Portfolio from "@/components/Portfolio";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import QuoteGenerator from "@/components/QuoteGenerator";
+import ProjectLocationsMap from "@/components/ProjectLocationsMap";
 import Contact from "@/components/Contact";
 import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
@@ -26,6 +27,7 @@ const Index = () => {
         <Portfolio />
         <WhyChooseUs />
         <Testimonials />
+        <ProjectLocationsMap />
         <div id="quote-generator">
           <QuoteGenerator />
         </div>
