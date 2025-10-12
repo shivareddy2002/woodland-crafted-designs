@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Menu, X, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import QuoteGeneratorModal from "@/components/QuoteGeneratorModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -59,7 +57,7 @@ const Header = () => {
               </button>
             ))}
             <Button
-              onClick={() => setIsQuoteModalOpen(true)}
+              onClick={() => scrollToSection("#quote-generator")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               <Calculator className="w-4 h-4 mr-2" />
@@ -92,10 +90,7 @@ const Header = () => {
                 </button>
               ))}
               <button
-                onClick={() => {
-                  setIsQuoteModalOpen(true);
-                  setIsMenuOpen(false);
-                }}
+                onClick={() => scrollToSection("#quote-generator")}
                 className="block w-full text-left px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 ease-in-out transform hover:translate-x-1 rounded-lg mx-4 mt-2"
               >
                 <Calculator className="w-4 h-4 mr-2 inline" />
@@ -105,11 +100,6 @@ const Header = () => {
           </div>
         )}
       </div>
-      
-      <QuoteGeneratorModal 
-        isOpen={isQuoteModalOpen} 
-        onClose={() => setIsQuoteModalOpen(false)} 
-      />
     </header>
   );
 };
