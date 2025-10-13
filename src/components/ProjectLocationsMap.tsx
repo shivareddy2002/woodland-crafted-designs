@@ -11,13 +11,13 @@ const ProjectLocationsMap = () => {
   const [totalProjects] = useState(100);
 
   const locations = [
-    { city: 'New York', coords: [40.7128, -74.0060], projects: 25 },
-    { city: 'Los Angeles', coords: [34.0522, -118.2437], projects: 20 },
-    { city: 'Chicago', coords: [41.8781, -87.6298], projects: 15 },
-    { city: 'Houston', coords: [29.7604, -95.3698], projects: 12 },
-    { city: 'Phoenix', coords: [33.4484, -112.0740], projects: 10 },
-    { city: 'Miami', coords: [25.7617, -80.1918], projects: 8 },
-    { city: 'Seattle', coords: [47.6062, -122.3321], projects: 10 },
+    { city: 'Hyderabad', coords: [17.3850, 78.4867], projects: 30 },
+    { city: 'Bengaluru', coords: [12.9716, 77.5946], projects: 20 },
+    { city: 'Mumbai', coords: [19.0760, 72.8777], projects: 15 },
+    { city: 'Kadapa', coords: [14.4673, 78.8242], projects: 10 },
+    { city: 'Chennai', coords: [13.0827, 80.2707], projects: 10 },
+    { city: 'Pune', coords: [18.5204, 73.8567], projects: 8 },
+    { city: 'Vizag', coords: [17.6868, 83.2185], projects: 7 },
   ];
 
   useEffect(() => {
@@ -39,8 +39,8 @@ const ProjectLocationsMap = () => {
       popupAnchor: [0, -40]
     });
     
-    // Initialize map centered on USA
-    map.current = L.map(mapContainer.current).setView([37.0902, -95.7129], 4);
+    // Initialize map centered on India
+    map.current = L.map(mapContainer.current).setView([20.5937, 78.9629], 5);
     
     // Add tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -86,13 +86,13 @@ const ProjectLocationsMap = () => {
         <div className="text-center mb-12 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
             <MapPin className="w-5 h-5 text-primary" />
-            <span className="text-sm font-semibold text-primary">Our Presence Across the USA</span>
+            <span className="text-sm font-semibold text-primary">Our Presence Across India</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Our Project Footprint Across the United States
+            Our Project Footprint Across India
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Discover where our craftsmanship has brought beauty and functionality to homes and offices across the nation.
+            A glance at where we've delivered exceptional interior and woodcraft projects.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ const ProjectLocationsMap = () => {
           {/* Call to Action */}
           <div className="text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 p-8 rounded-xl border border-primary/20">
             <h3 className="text-2xl font-bold text-foreground mb-3">
-              From New York to Los Angeles
+              From Hyderabad to Mumbai
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               We've proudly completed over {totalProjects} premium interior and woodcraft projects, transforming spaces with precision and passion.
@@ -179,7 +179,7 @@ const ProjectLocationsMap = () => {
                 </Button>
               </a>
               <p className="text-sm text-muted-foreground italic">
-                Expanding our footprint — coming soon to Boston & Denver! 🚀
+                Expanding our footprint — coming soon to Delhi & Kochi! 🚀
               </p>
             </div>
           </div>
