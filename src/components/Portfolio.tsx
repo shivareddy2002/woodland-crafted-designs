@@ -307,22 +307,6 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 p-8 rounded-xl border border-primary/20">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Ready to Start Your Project?
-              </h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Let's create something beautiful together. Contact us for a free consultation and quote.
-              </p>
-              <a href="#contact">
-                <Button size="lg" className="font-semibold">
-                  Get Free Quote
-                </Button>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
