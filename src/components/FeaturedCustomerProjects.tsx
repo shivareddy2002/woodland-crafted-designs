@@ -1,10 +1,12 @@
 import { MapPin, Quote, Eye, Clock, Award, CheckCircle2, Users } from "lucide-react";
-import portfolioBedroomImage from "@/assets/portfolio-bedroom.jpg";
-import portfolioKitchenImage from "@/assets/portfolio-kitchen.jpg";
-import portfolioDoorsImage from "@/assets/portfolio-doors.jpg";
-import portfolioCabinetsImage from "@/assets/portfolio-cabinets.jpg";
-import portfolioOfficeImage from "@/assets/portfolio-office.jpg";
-import portfolioApartmentImage from "@/assets/portfolio-apartment.jpg";
+
+// Main project hero images
+import hero2BHKRameshImage from "@/assets/hero-2bhk-ramesh.jpg";
+import hero3BHKShivaImage from "@/assets/hero-3bhk-shiva.jpg";
+import heroOfficeTechWaveImage from "@/assets/hero-office-techwave.jpg";
+import heroGuesthouseKarthikImage from "@/assets/hero-guesthouse-karthik.jpg";
+import heroHotelKavyaImage from "@/assets/hero-hotel-kavya.jpg";
+import heroPenthouseKalyaniImage from "@/assets/hero-penthouse-kalyani.jpg";
 
 // Project 1 - Mr. Ramesh 2BHK
 import bedroomRameshImage from "@/assets/bedroom-ramesh.jpg";
@@ -61,7 +63,7 @@ const FeaturedCustomerProjects = () => {
       title: "Mr. Ramesh — 2BHK Home Interiors",
       customer: "Mr. Ramesh",
       location: "Hyderabad",
-      image: portfolioBedroomImage,
+      image: hero2BHKRameshImage,
       description: "Elegant 2BHK featuring two bedrooms, two bathrooms, a modern living room, and modular kitchen — designed with teak wood finish and subtle lighting.",
       duration: "6 Weeks",
       budget: "₹5,50,000",
@@ -96,7 +98,7 @@ const FeaturedCustomerProjects = () => {
       title: "Mr. Shiva — 3BHK Premium Residence",
       customer: "Mr. Shiva",
       location: "Bengaluru",
-      image: portfolioApartmentImage,
+      image: hero3BHKShivaImage,
       description: "Spacious 3BHK with three bedrooms, three bathrooms, a luxurious hall, and an advanced modular kitchen.",
       duration: "8 Weeks",
       budget: "₹8,75,000",
@@ -136,7 +138,7 @@ const FeaturedCustomerProjects = () => {
       title: "Mr. Sanjay — Office Interiors (TechWave Pvt. Ltd.)",
       customer: "TechWave Pvt. Ltd.",
       location: "Hyderabad",
-      image: portfolioOfficeImage,
+      image: heroOfficeTechWaveImage,
       description: "Corporate workspace with reception, ergonomic workstations, meeting rooms, and refreshment zone.",
       duration: "10 Weeks",
       budget: "₹15,50,000",
@@ -171,7 +173,7 @@ const FeaturedCustomerProjects = () => {
       title: "Mr. Karthik — Guesthouse Project",
       customer: "Mr. Karthik",
       location: "Chennai",
-      image: portfolioDoorsImage,
+      image: heroGuesthouseKarthikImage,
       description: "Designed for comfort and hospitality — reception, guest rooms, dining, parking, and outdoor areas.",
       duration: "12 Weeks",
       budget: "₹12,25,000",
@@ -206,7 +208,7 @@ const FeaturedCustomerProjects = () => {
       title: "Mrs. Kavya — Hotel Interiors",
       customer: "Mrs. Kavya",
       location: "Bengaluru",
-      image: portfolioKitchenImage,
+      image: heroHotelKavyaImage,
       description: "Full hotel interior design — from reception to service zones with elegant wood decor.",
       duration: "16 Weeks",
       budget: "₹28,50,000",
@@ -246,7 +248,7 @@ const FeaturedCustomerProjects = () => {
       title: "Mr. Kalyani — Luxury Penthouse Interiors",
       customer: "Mr. Kalyani",
       location: "Mumbai",
-      image: portfolioCabinetsImage,
+      image: heroPenthouseKalyaniImage,
       description: "Premium penthouse featuring open-plan living, elegant bedrooms, modern kitchen, and scenic terrace.",
       duration: "14 Weeks",
       budget: "₹22,75,000",
