@@ -173,11 +173,17 @@ const ProjectLocationsMap = () => {
               We've proudly completed over {totalProjects} premium interior and woodcraft projects, transforming spaces with precision and passion.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="#portfolio">
-                <Button className="bg-primary hover:bg-primary/90 px-8 py-6 text-lg">
-                  View Our Portfolio
-                </Button>
-              </a>
+              <Button 
+                className="bg-primary hover:bg-primary/90 px-8 py-6 text-lg"
+                onClick={() => {
+                  const element = document.getElementById('customer-projects');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                View Our Portfolio
+              </Button>
               <p className="text-sm text-muted-foreground italic">
                 Expanding our footprint — coming soon to Delhi & Kochi! 🚀
               </p>
