@@ -40,7 +40,7 @@ import diningHotelImage from "@/assets/dining-hotel.jpg";
 import serviceHotelImage from "@/assets/service-hotel.jpg";
 import safetyHotelImage from "@/assets/safety-hotel.jpg";
 
-// Project 6 - Mr. Kalyani Penthouse
+// Project 6 - Mrs. Kalyani Penthouse
 import livingPenthouseImage from "@/assets/living-penthouse.jpg";
 import bedroomsPenthouseImage from "@/assets/bedrooms-penthouse.jpg";
 import kitchenPenthouseImage from "@/assets/kitchen-penthouse.jpg";
@@ -245,15 +245,15 @@ const FeaturedCustomerProjects = () => {
     {
       category: "Penthouse",
       icon: "🌇",
-      title: "Mr. Kalyani — Luxury Penthouse Interiors",
-      customer: "Mr. Kalyani",
+      title: "Mrs. Kalyani — Luxury Penthouse Interiors",
+      customer: "Mrs. Kalyani",
       location: "Mumbai",
       image: heroPenthouseKalyaniImage,
       description: "Premium penthouse featuring open-plan living, elegant bedrooms, modern kitchen, and scenic terrace.",
       duration: "14 Weeks",
       budget: "₹22,75,000",
       testimonial: "Living in this penthouse feels like a dream. The attention to detail and quality of materials is exceptional.",
-      detailedOverview: "Mr. Kalyani's luxury penthouse was designed to maximize the stunning city views while creating sophisticated living spaces. We used premium teak furniture, incorporated high-gloss wood cabinetry, and created seamless indoor-outdoor transitions.",
+      detailedOverview: "Mrs. Kalyani's luxury penthouse was designed to maximize the stunning city views while creating sophisticated living spaces. We used premium teak furniture, incorporated high-gloss wood cabinetry, and created seamless indoor-outdoor transitions.",
       subSections: [
         {
           name: "Living Area",
@@ -284,7 +284,7 @@ const FeaturedCustomerProjects = () => {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Featured Customer Projects
+            Portfolio
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Real stories from satisfied customers — showcasing our craftsmanship, dedication, and the beautiful spaces we've created together.
