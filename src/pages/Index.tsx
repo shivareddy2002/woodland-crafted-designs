@@ -9,6 +9,7 @@ import Services from "@/components/Services";
 import FeaturedCustomerProjects from "@/components/FeaturedCustomerProjects";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
+import Blog from "@/components/Blog";
 import QuoteGenerator from "@/components/QuoteGenerator";
 import ProjectLocationsMap from "@/components/ProjectLocationsMap";
 import Contact from "@/components/Contact";
@@ -31,6 +32,7 @@ const Index = () => {
         <FeaturedCustomerProjects />
         <WhyChooseUs />
         <Testimonials />
+        <Blog />
         <ProjectLocationsMap />
         <div id="quote-generator">
           <QuoteGenerator />
