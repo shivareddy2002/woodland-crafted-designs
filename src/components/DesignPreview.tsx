@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Eye, Lightbulb, Palette, Layout } from "lucide-react";
+import livingRoom3D from "@/assets/3d-living-room.jpg";
+import bedroom3D from "@/assets/3d-bedroom.jpg";
+import kitchen3D from "@/assets/3d-kitchen.jpg";
+import office3D from "@/assets/3d-office.jpg";
 
 const DesignPreview = () => {
   const features = [
@@ -23,6 +27,13 @@ const DesignPreview = () => {
       title: "360° Views",
       description: "Explore your space from every angle"
     }
+  ];
+
+  const galleryImages = [
+    { src: livingRoom3D, label: "Living Room 3D", aspect: "aspect-[4/3]" },
+    { src: bedroom3D, label: "Bedroom 3D", aspect: "aspect-square" },
+    { src: kitchen3D, label: "Kitchen 3D", aspect: "aspect-square" },
+    { src: office3D, label: "Office 3D", aspect: "aspect-[4/3]" }
   ];
 
   const handleRequest3DDesign = () => {
@@ -78,30 +89,46 @@ const DesignPreview = () => {
           {/* Image Grid Side */}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 aspect-[4/3] flex items-center justify-center border border-primary/20 shadow-lg">
-                <div className="text-center p-4">
-                  <Layout className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-medium text-primary">Living Room 3D</span>
+              <div className="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img 
+                  src={galleryImages[0].src} 
+                  alt={galleryImages[0].label}
+                  className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-primary-foreground font-semibold">{galleryImages[0].label}</span>
                 </div>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 aspect-square flex items-center justify-center border border-primary/20 shadow-lg">
-                <div className="text-center p-4">
-                  <Palette className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-medium text-primary">Kitchen 3D</span>
+              <div className="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img 
+                  src={galleryImages[2].src} 
+                  alt={galleryImages[2].label}
+                  className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-primary-foreground font-semibold">{galleryImages[2].label}</span>
                 </div>
               </div>
             </div>
             <div className="space-y-4 pt-8">
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 aspect-square flex items-center justify-center border border-primary/20 shadow-lg">
-                <div className="text-center p-4">
-                  <Lightbulb className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-medium text-primary">Bedroom 3D</span>
+              <div className="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img 
+                  src={galleryImages[1].src} 
+                  alt={galleryImages[1].label}
+                  className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-primary-foreground font-semibold">{galleryImages[1].label}</span>
                 </div>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 aspect-[4/3] flex items-center justify-center border border-primary/20 shadow-lg">
-                <div className="text-center p-4">
-                  <Eye className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-medium text-primary">Office 3D</span>
+              <div className="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img 
+                  src={galleryImages[3].src} 
+                  alt={galleryImages[3].label}
+                  className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-primary-foreground font-semibold">{galleryImages[3].label}</span>
                 </div>
               </div>
             </div>
