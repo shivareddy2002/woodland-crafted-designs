@@ -47,7 +47,7 @@ const WhatsAppChatModal = ({ isOpen, onClose }: WhatsAppChatModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md p-0 bg-white border-none shadow-2xl overflow-hidden rounded-2xl">
+      <DialogContent className="max-w-md p-0 bg-white border-none shadow-2xl overflow-hidden rounded-2xl [&>button]:hidden">
         <DialogHeader className="sr-only">
           <DialogTitle>WhatsApp Support</DialogTitle>
           <DialogDescription>Chat with us on WhatsApp</DialogDescription>
@@ -67,6 +67,11 @@ const WhatsAppChatModal = ({ isOpen, onClose }: WhatsAppChatModalProps) => {
 
         {/* Chat Content */}
         <div className="p-6 space-y-6 bg-gray-50">
+          {/* Welcome to IDL */}
+          <div className="text-center">
+            <p className="text-lg font-semibold text-green-600">Welcome to "IDL"</p>
+          </div>
+          
           {/* Welcome Message */}
           <div className="flex">
             <div className="bg-green-500 text-white px-4 py-2 rounded-2xl rounded-tl-md max-w-xs">
