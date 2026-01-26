@@ -145,9 +145,9 @@ const QuoteGenerator = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Input Section */}
-                <div className="space-y-4">
+              <div className="space-y-6">
+                {/* Selection Sections - 2 columns */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Material Selection */}
                   <div>
                     <label className="block text-base font-semibold text-primary mb-3">
@@ -178,7 +178,7 @@ const QuoteGenerator = () => {
                     <label className="block text-base font-semibold text-primary mb-3">
                       Choose Product Types (Select Multiple)
                     </label>
-                    <div className="grid grid-cols-1 gap-2">
+                    <div className="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto pr-2">
                       {products.map((product) => (
                         <div
                           key={product.name}
@@ -197,7 +197,10 @@ const QuoteGenerator = () => {
                       ))}
                     </div>
                   </div>
+                </div>
 
+                {/* Second Row - Apartments & Commercial */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Apartment Pricing Section */}
                   <div>
                     <label className="block text-base font-semibold text-primary mb-3">
@@ -228,7 +231,7 @@ const QuoteGenerator = () => {
                     <label className="block text-base font-semibold text-primary mb-3">
                       Commercial Projects (Select Multiple)
                     </label>
-                    <div className="grid grid-cols-1 gap-2">
+                    <div className="grid grid-cols-1 gap-2 max-h-48 overflow-y-auto pr-2">
                       {commercialProjects.map((commercial) => (
                         <div
                           key={commercial.name}
@@ -247,8 +250,10 @@ const QuoteGenerator = () => {
                       ))}
                     </div>
                   </div>
+                </div>
 
-                  {/* Area Input */}
+                {/* Area Input & Calculate Button */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
                   <div>
                     <label className="block text-base font-semibold text-primary mb-2">
                       Area (sq.ft)
@@ -264,7 +269,7 @@ const QuoteGenerator = () => {
 
                   <Button 
                     onClick={calculateQuote}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 text-base"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 text-base h-[50px]"
                     disabled={(selectedMaterials.length === 0 && selectedProducts.length === 0 && selectedApartments.length === 0 && selectedCommercial.length === 0) || !area}
                   >
                     <Calculator className="w-4 h-4 mr-2" />
@@ -272,69 +277,75 @@ const QuoteGenerator = () => {
                   </Button>
                 </div>
 
-                {/* Result Section */}
-                <div className="space-y-4">
-                  {/* Selected Items */}
+                {/* Results Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                  {/* Selected Materials */}
                   <div>
-                    <h3 className="text-base font-semibold text-primary mb-2">Selected Materials</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="text-sm font-semibold text-primary mb-2">Selected Materials</h3>
+                    <div className="flex flex-wrap gap-1">
                       {selectedMaterials.length > 0 ? (
                         selectedMaterials.map((material) => (
-                          <Badge key={material} variant="secondary" className="text-sm">
+                          <Badge key={material} variant="secondary" className="text-xs">
                             {material}
                           </Badge>
                         ))
                       ) : (
-                        <span className="text-wood-dark text-sm">No materials selected</span>
+                        <span className="text-wood-dark text-xs">No materials selected</span>
                       )}
                     </div>
                   </div>
 
+                  {/* Selected Products */}
                   <div>
-                    <h3 className="text-base font-semibold text-primary mb-2">Selected Products</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="text-sm font-semibold text-primary mb-2">Selected Products</h3>
+                    <div className="flex flex-wrap gap-1">
                       {selectedProducts.length > 0 ? (
                         selectedProducts.map((product) => (
-                          <Badge key={product} variant="secondary" className="text-sm">
+                          <Badge key={product} variant="secondary" className="text-xs">
                             {product}
                           </Badge>
                         ))
                       ) : (
-                        <span className="text-wood-dark text-sm">No products selected</span>
+                        <span className="text-wood-dark text-xs">No products selected</span>
                       )}
                     </div>
                   </div>
 
+                  {/* Selected Apartments */}
                   <div>
-                    <h3 className="text-base font-semibold text-primary mb-2">Selected Apartments</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="text-sm font-semibold text-primary mb-2">Selected Apartments</h3>
+                    <div className="flex flex-wrap gap-1">
                       {selectedApartments.length > 0 ? (
                         selectedApartments.map((apartment) => (
-                          <Badge key={apartment} variant="secondary" className="text-sm">
+                          <Badge key={apartment} variant="secondary" className="text-xs">
                             {apartment}
                           </Badge>
                         ))
                       ) : (
-                        <span className="text-wood-dark text-sm">No apartments selected</span>
+                        <span className="text-wood-dark text-xs">No apartments selected</span>
                       )}
                     </div>
                   </div>
 
+                  {/* Selected Commercial */}
                   <div>
-                    <h3 className="text-base font-semibold text-primary mb-2">Selected Commercial</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="text-sm font-semibold text-primary mb-2">Selected Commercial</h3>
+                    <div className="flex flex-wrap gap-1">
                       {selectedCommercial.length > 0 ? (
                         selectedCommercial.map((commercial) => (
-                          <Badge key={commercial} variant="secondary" className="text-sm">
+                          <Badge key={commercial} variant="secondary" className="text-xs">
                             {commercial}
                           </Badge>
                         ))
                       ) : (
-                        <span className="text-wood-dark text-sm">No commercial projects selected</span>
+                        <span className="text-wood-dark text-xs">No commercial selected</span>
                       )}
                     </div>
                   </div>
+                </div>
 
+                {/* Cost Estimate & Contact CTA */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                   {/* Cost Estimate */}
                   {estimatedCost && (
                     <Card className="border-primary bg-primary/5">
@@ -360,18 +371,18 @@ const QuoteGenerator = () => {
                       <p className="text-wood-dark text-xs mb-3">
                         Contact us for comprehensive consultation.
                       </p>
-                      <div className="space-y-2">
+                      <div className="flex gap-2">
                         <a 
                           href="https://wa.me/919555222567"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block w-full px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 text-xs font-semibold"
+                          className="flex-1 px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 text-xs font-semibold text-center"
                         >
                           WhatsApp Quote
                         </a>
                         <a 
                           href="tel:+919555222567"
-                          className="block w-full px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 text-xs font-semibold"
+                          className="flex-1 px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 text-xs font-semibold text-center"
                         >
                           Call Now
                         </a>
