@@ -4,7 +4,7 @@ import FeaturedProducts from "@/components/FeaturedProducts";
 import ApartmentTypes from "@/components/ApartmentTypes";
 import About from "@/components/About";
 import OurProcess from "@/components/OurProcess";
-
+import VideoShowcase from "@/components/VideoShowcase";
 import Services from "@/components/Services";
 import FeaturedCustomerProjects from "@/components/FeaturedCustomerProjects";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -27,7 +27,7 @@ const Index = () => {
         <ApartmentTypes />
         <About />
         <OurProcess />
-        
+        <VideoShowcase />
         <Services />
         <FeaturedCustomerProjects />
         <WhyChooseUs />
