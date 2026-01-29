@@ -55,47 +55,49 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-2 sm:px-0">
           <Card className="border-wood-medium shadow-lg">
-            <CardContent className="p-8 md:p-12 text-center">
-              <div className="flex justify-center mb-6">
+            <CardContent className="p-6 sm:p-8 md:p-12 text-center">
+              <div className="flex justify-center mb-4 sm:mb-6">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 fill-current" />
                 ))}
               </div>
               
-              <blockquote className="text-xl md:text-2xl text-wood-dark mb-6 italic leading-relaxed">
+              <blockquote className="text-lg sm:text-xl md:text-2xl text-wood-dark mb-4 sm:mb-6 italic leading-relaxed px-2 sm:px-4">
                 "{testimonials[currentIndex].review}"
               </blockquote>
               
-              <div className="text-primary font-bold text-lg">
+              <div className="text-primary font-bold text-base sm:text-lg">
                 — {testimonials[currentIndex].name}
               </div>
             </CardContent>
           </Card>
 
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 shadow-lg"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 shadow-lg"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+          {/* Navigation Buttons - positioned below on mobile, sides on desktop */}
+          <div className="flex justify-center gap-4 mt-6 sm:mt-0">
+            <button
+              onClick={prevTestimonial}
+              className="sm:absolute sm:left-0 md:-left-4 sm:top-1/2 sm:transform sm:-translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 shadow-lg"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+            
+            <button
+              onClick={nextTestimonial}
+              className="sm:absolute sm:right-0 md:-right-4 sm:top-1/2 sm:transform sm:-translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 shadow-lg"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+          </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-4 sm:mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 ${
                   index === currentIndex ? 'bg-primary' : 'bg-wood-medium'
                 }`}
               />
