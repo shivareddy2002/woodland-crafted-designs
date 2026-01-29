@@ -106,14 +106,14 @@ const VideoShowcase = () => {
         </div>
 
         {/* Video Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {videos.map((video) => (
             <div
               key={video.id}
               className="group relative bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >
-              {/* Video Container */}
-              <div className="relative aspect-[9/16] overflow-hidden">
+              {/* Video Container - responsive aspect ratio */}
+              <div className="relative aspect-[9/16] sm:aspect-[9/14] lg:aspect-[9/16] overflow-hidden">
                 <video
                   ref={(el) => { videoRefs.current[video.id] = el; }}
                   src={video.src}

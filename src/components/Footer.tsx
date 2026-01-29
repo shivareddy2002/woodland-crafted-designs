@@ -79,27 +79,25 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 my-8"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          {/* Copyright line removed as requested */}
-          
+        <div className="flex flex-col items-center justify-center">
           {/* Social Media Icons */}
-          <div className="flex space-x-4">
-            <a href="https://facebook.com/rupasthala.design.studio" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Facebook className="w-4 h-4" />
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <a href="https://facebook.com/rupasthala.design.studio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
+              <Facebook className="w-5 h-5 sm:w-4 sm:h-4" />
             </a>
-            <a href="https://instagram.com/rupasthala_design_studio" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Instagram className="w-4 h-4" />
+            <a href="https://instagram.com/rupasthala_design_studio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
+              <Instagram className="w-5 h-5 sm:w-4 sm:h-4" />
             </a>
-            <a href="#" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Linkedin className="w-4 h-4" />
+            <a href="#" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
+              <Linkedin className="w-5 h-5 sm:w-4 sm:h-4" />
             </a>
-            <a href="https://youtube.com/@rupasthala" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <a href="https://youtube.com/@rupasthala" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
+              <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a2.999 2.999 0 0 0-2.108-2.124C19.598 3.5 12 3.5 12 3.5s-7.598 0-9.39.562A2.999 2.999 0 0 0 .502 6.186C0 7.986 0 12 0 12s0 4.014.502 5.814a2.999 2.999 0 0 0 2.108 2.124C4.402 20.5 12 20.5 12 20.5s7.598 0 9.39-.562a2.999 2.999 0 0 0 2.108-2.124C24 16.014 24 12 24 12s0-4.014-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
-            <a href="#" className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Twitter className="w-4 h-4" />
+            <a href="#" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
+              <Twitter className="w-5 h-5 sm:w-4 sm:h-4" />
             </a>
           </div>
         </div>
