@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
@@ -34,6 +34,46 @@ const VideoShowcase = () => {
   const [selectedVideo, setSelectedVideo] = useState<typeof videos[0] | null>(null);
   const [isPlaying, setIsPlaying] = useState<{ [key: number]: boolean }>({});
   const [isMuted, setIsMuted] = useState<{ [key: number]: boolean }>({});
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Autoplay videos when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Play all videos when section is visible
+            videos.forEach((video) => {
+              const videoEl = videoRefs.current[video.id];
+              if (videoEl) {
+                videoEl.play().catch(() => {
+                  // Autoplay might be blocked, user needs to interact
+                });
+                setIsPlaying((prev) => ({ ...prev, [video.id]: true }));
+              }
+            });
+          } else {
+            // Pause all videos when section is out of view
+            videos.forEach((video) => {
+              const videoEl = videoRefs.current[video.id];
+              if (videoEl) {
+                videoEl.pause();
+                setIsPlaying((prev) => ({ ...prev, [video.id]: false }));
+              }
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const togglePlay = (videoId: number, videoElement: HTMLVideoElement) => {
     if (isPlaying[videoId]) {
@@ -50,7 +90,7 @@ const VideoShowcase = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-secondary/20">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 lg:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -75,11 +115,10 @@ const VideoShowcase = () => {
               {/* Video Container */}
               <div className="relative aspect-[9/16] overflow-hidden">
                 <video
-                  id={`video-${video.id}`}
+                  ref={(el) => { videoRefs.current[video.id] = el; }}
                   src={video.src}
                   className="w-full h-full object-cover"
                   loop
-                  muted={!isMuted[video.id]}
                   playsInline
                   onClick={() => setSelectedVideo(video)}
                 />
@@ -97,8 +136,8 @@ const VideoShowcase = () => {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      const videoEl = document.getElementById(`video-${video.id}`) as HTMLVideoElement;
-                      togglePlay(video.id, videoEl);
+                      const videoEl = videoRefs.current[video.id];
+                      if (videoEl) togglePlay(video.id, videoEl);
                     }}
                     className="w-16 h-16 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center text-primary-foreground transform transition-all duration-300 hover:scale-110 shadow-lg"
                   >
@@ -114,8 +153,8 @@ const VideoShowcase = () => {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    const videoEl = document.getElementById(`video-${video.id}`) as HTMLVideoElement;
-                    toggleMute(video.id, videoEl);
+                    const videoEl = videoRefs.current[video.id];
+                    if (videoEl) toggleMute(video.id, videoEl);
                   }}
                   className="absolute bottom-20 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all duration-300"
                 >
