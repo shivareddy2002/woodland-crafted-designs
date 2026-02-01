@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,9 +37,7 @@ const Header = () => {
             onClick={scrollToTop}
             className="flex items-center space-x-2 group cursor-pointer transition-all duration-300 hover:scale-105"
           >
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:shadow-lg transition-all duration-300">
-              <span className="text-primary-foreground font-bold text-sm">IDL</span>
-            </div>
+            <img src={logo} alt="In Design Land Logo" className="w-8 h-8 rounded-lg object-cover group-hover:shadow-lg transition-all duration-300" />
             <div>
               <div className="font-bold text-lg text-primary group-hover:text-primary/80 transition-colors duration-300">In Design Land</div>
               <div className="text-xs text-wood-medium -mt-1 group-hover:text-wood-dark transition-colors duration-300">Premium Wood Solutions</div>

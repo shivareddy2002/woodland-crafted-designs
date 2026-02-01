@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">IDL</span>
-              </div>
+              <img src={logo} alt="In Design Land Logo" className="w-8 h-8 rounded-lg object-cover" />
               <div>
                 <div className="font-bold text-lg">In Design Land</div>
                 <div className="text-sm opacity-90">Premium Wood Solutions</div>
