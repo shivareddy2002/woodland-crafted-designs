@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Search, Play, ArrowRight, Facebook, Twitter, Linkedin, Share2, X } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 // Import blog images
 import blogKitchenImage from "@/assets/blog-modular-kitchen.jpg";
@@ -135,6 +137,7 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -163,20 +166,29 @@ const Blog = () => {
   };
 
   return (
-    <section id="blog" className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
+    <section id="blog" className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <div className={cn(
+          "text-center mb-12 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Design Insights & Inspiration
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className={cn(
+            "text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "150ms" }}>
             Expert tips, trends, and ideas to transform your living and working spaces.
           </p>
         </div>
 
         {/* Search and Filter */}
-        <div className="flex flex-col md:flex-row gap-4 mb-10 max-w-4xl mx-auto">
+        <div className={cn(
+          "flex flex-col md:flex-row gap-4 mb-10 max-w-4xl mx-auto transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )} style={{ transitionDelay: "250ms" }}>
           {/* Search */}
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -184,19 +196,23 @@ const Blog = () => {
               placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 h-12 bg-card border-border/50"
+              className="pl-10 h-12 bg-card border-border/50 transition-all duration-300 focus:shadow-md"
             />
           </div>
           
           {/* Category Filter */}
           <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
+            {categories.map((category, index) => (
               <Button
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category)}
-                className="rounded-full"
+                className={cn(
+                  "rounded-full transition-all duration-300 hover:scale-105",
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                )}
+                style={{ transitionDelay: `${300 + index * 50}ms` }}
               >
                 {category}
               </Button>
@@ -206,17 +222,21 @@ const Blog = () => {
 
         {/* Blog Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPosts.map((post) => (
+          {filteredPosts.map((post, index) => (
             <article
               key={post.id}
-              className="group bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border/50"
+              className={cn(
+                "group bg-card rounded-2xl overflow-hidden shadow-md hover-lift hover-glow border border-border/50 transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${400 + index * 100}ms` }}
             >
               {/* Image Container */}
               <div className="relative overflow-hidden aspect-[16/10]">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover image-zoom"
                 />
                 
                 {/* Video Overlay */}

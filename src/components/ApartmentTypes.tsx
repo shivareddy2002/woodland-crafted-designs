@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ApartmentDetailModal from "@/components/ApartmentDetailModal";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 import apartment1bhk from "@/assets/1bhk-apartment.jpg";
 import apartment2bhk from "@/assets/2bhk-apartment.jpg";
 import apartment3bhk from "@/assets/3bhk-apartment.jpg";
@@ -11,6 +13,7 @@ import apartment5bhk from "@/assets/5bhk-apartment.jpg";
 const ApartmentTypes = () => {
   const [selectedApartment, setSelectedApartment] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   const apartments = [
     {
@@ -96,30 +99,45 @@ const ApartmentTypes = () => {
   };
 
   return (
-    <section id="apartments" className="py-20 bg-background">
+    <section id="apartments" className="py-20 bg-background" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className={cn(
+          "text-center mb-16 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Apartment Solutions
           </h2>
-          <p className="text-lg text-wood-dark max-w-2xl mx-auto">
+          <p className={cn(
+            "text-lg text-wood-dark max-w-2xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "150ms" }}>
             Complete wood furnishing solutions for apartments of all sizes. From compact 1BHK to luxurious 5BHK penthouses.
           </p>
         </div>
 
+        {/* Apartments Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {apartments.map((apartment, index) => (
             <Card 
               key={index}
-              className="group overflow-hidden border-wood-medium hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+              className={cn(
+                "group overflow-hidden border-wood-medium hover-lift hover-glow flex flex-col h-full transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={apartment.image}
                   alt={apartment.type}
-                  className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-56 object-cover image-zoom"
                 />
-                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full font-semibold text-sm">
+                <div className={cn(
+                  "absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full font-semibold text-sm transition-all duration-500 ease-out",
+                  isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                )} style={{ transitionDelay: `${400 + index * 100}ms` }}>
                   {apartment.size}
                 </div>
               </div>
@@ -140,7 +158,7 @@ const ApartmentTypes = () => {
 
                 <Button 
                   onClick={() => handleViewApartment(apartment)}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 mt-auto"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 mt-auto btn-premium"
                 >
                   {apartment.button}
                 </Button>

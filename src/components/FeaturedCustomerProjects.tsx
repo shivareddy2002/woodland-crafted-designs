@@ -51,10 +51,13 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const FeaturedCustomerProjects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   const featuredProjects = [
     {
@@ -280,40 +283,55 @@ const FeaturedCustomerProjects = () => {
   ];
 
   return (
-    <section id="customer-projects" className="py-20 bg-muted/30">
+    <section id="customer-projects" className="py-20 bg-muted/30" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="text-center mb-16 animate-fade-in">
+        {/* Header */}
+        <div className={cn(
+          "text-center mb-16 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Portfolio
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className={cn(
+            "text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "150ms" }}>
             Real stories from satisfied customers — showcasing our craftsmanship, dedication, and the beautiful spaces we've created together.
           </p>
         </div>
 
+        {/* Project Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProjects.map((project, index) => (
             <Card
               key={index}
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-border bg-card cursor-pointer"
+              className={cn(
+                "group overflow-hidden hover-lift hover-glow border-border bg-card cursor-pointer transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${300 + index * 100}ms` }}
               onClick={() => setSelectedProject(project)}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-64 object-cover image-zoom"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Category Badge */}
-                <Badge className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-sm font-semibold">
+                <Badge className={cn(
+                  "absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-sm font-semibold transition-all duration-500",
+                  isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                )} style={{ transitionDelay: `${400 + index * 100}ms` }}>
                   {project.icon} {project.category}
                 </Badge>
 
                 {/* View Details Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <Button variant="secondary" size="lg" className="font-semibold shadow-lg">
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <Button variant="secondary" size="lg" className="font-semibold shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
                     <Eye className="w-4 h-4 mr-2" />
                     View Details
                   </Button>
@@ -330,7 +348,7 @@ const FeaturedCustomerProjects = () => {
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
 

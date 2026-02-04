@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ProductInquiryModal from "@/components/ProductInquiryModal";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 import bedroomImage from "@/assets/bedroom-wood.jpg";
 import workUnitsImage from "@/assets/work-units-wood.jpg";
 import doorsWindowsImage from "@/assets/doors-windows-wood.jpg";
@@ -12,6 +14,7 @@ import hotelsResortsImage from "@/assets/hotels-resorts.jpg";
 const FeaturedProducts = () => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   const products = [
     {
@@ -70,31 +73,42 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <section id="products" className="py-20 bg-wood-light">
+    <section id="products" className="py-20 bg-wood-light" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className={cn(
+          "text-center mb-16 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Our Product Categories
           </h2>
-          <p className="text-lg text-wood-dark max-w-2xl mx-auto">
+          <p className={cn(
+            "text-lg text-wood-dark max-w-2xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "150ms" }}>
             Discover our comprehensive range of premium wood products and solutions for every space and need.
           </p>
         </div>
 
-
+        {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className="group overflow-hidden border-wood-medium hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              className={cn(
+                "group overflow-hidden border-wood-medium hover-lift hover-glow transition-all duration-500 ease-out flex flex-col h-full",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-64 object-cover image-zoom"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
               <CardContent className="p-6 bg-gradient-to-b from-card to-wood-light flex flex-col flex-grow">
@@ -106,7 +120,7 @@ const FeaturedProducts = () => {
                 </p>
                 <Button 
                   variant="outline" 
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 mt-auto"
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 mt-auto btn-premium"
                   onClick={() => handleEnquiryClick(product)}
                 >
                   Enquiry

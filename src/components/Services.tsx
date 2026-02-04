@@ -1,7 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Hammer, Home, Wrench, Palette, TreePine, Shield } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 const Services = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
+
   const services = [
     {
       icon: Hammer,
@@ -36,26 +40,38 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-20 bg-background" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className={cn(
+          "text-center mb-16 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Our Services
           </h2>
-          <p className="text-lg text-wood-dark max-w-2xl mx-auto">
+          <p className={cn(
+            "text-lg text-wood-dark max-w-2xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "150ms" }}>
             Comprehensive wood solutions from design conception to final installation and beyond.
           </p>
         </div>
 
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="group border-wood-medium hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className={cn(
+                "group border-wood-medium hover-lift hover-glow transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
               <CardContent className="p-8 text-center bg-gradient-to-b from-card to-wood-light">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                  <service.icon className="w-8 h-8 text-primary" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-all duration-500">
+                  <service.icon className="w-8 h-8 text-primary icon-hover" />
                 </div>
                 
                 <h3 className="text-xl font-bold text-primary mb-4">
@@ -70,7 +86,11 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        {/* CTA Section */}
+        <div className={cn(
+          "text-center mt-16 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )} style={{ transitionDelay: "900ms" }}>
           <div className="bg-gradient-to-r from-wood-light to-wood-medium p-8 rounded-lg">
             <h3 className="text-2xl font-bold text-primary mb-4">
               Ready to Transform Your Space?
@@ -83,13 +103,13 @@ const Services = () => {
                 href="https://wa.me/919555222567"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold"
+                className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 font-semibold btn-premium"
               >
                 WhatsApp: 9555222567
               </a>
               <a 
                 href="mailto:indesignland@gmail.com"
-                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold"
+                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold btn-premium"
               >
                 Email: indesignland@gmail.com
               </a>
