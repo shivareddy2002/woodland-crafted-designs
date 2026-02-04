@@ -10,8 +10,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 const Portfolio = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
   const portfolioData = {
     Bedroom: [
       {
@@ -265,29 +268,40 @@ const Portfolio = () => {
 
   return (
     <>
-      <section id="portfolio" className="py-20 bg-background">
+      <section id="portfolio" className="py-20 bg-background" ref={sectionRef as React.RefObject<HTMLElement>}>
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center mb-16 animate-fade-in">
+          {/* Header */}
+          <div className={cn(
+            "text-center mb-16 transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Our Portfolio
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className={cn(
+              "text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 ease-out",
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            )} style={{ transitionDelay: "150ms" }}>
               Explore our showcase of completed projects featuring premium wood solutions and custom designs.
             </p>
           </div>
 
           {/* Category Cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
-            {categories.map((category) => (
+            {categories.map((category, index) => (
               <Card
                 key={category}
                 onClick={() => handleCategoryClick(category)}
-                className="group cursor-pointer overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-border hover:border-primary bg-card"
+                className={cn(
+                  "group cursor-pointer overflow-hidden hover-lift hover-glow border-2 border-border hover:border-primary bg-card transition-all duration-500 ease-out",
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                )}
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
                 <CardContent className="p-6 text-center">
                   <div className="mb-3">
-                    {category === "Bedroom" && <Award className="w-12 h-12 mx-auto text-primary group-hover:scale-110 transition-transform" />}
-                    {category === "Kitchen" && <Award className="w-12 h-12 mx-auto text-primary group-hover:scale-110 transition-transform" />}
+                    {category === "Bedroom" && <Award className="w-12 h-12 mx-auto text-primary group-hover:scale-110 transition-transform duration-300" />}
+                    {category === "Kitchen" && <Award className="w-12 h-12 mx-auto text-primary group-hover:scale-110 transition-transform duration-300" />}
                     {category === "Doors" && <Award className="w-12 h-12 mx-auto text-primary group-hover:scale-110 transition-transform" />}
                     {category === "Cabinets" && <Award className="w-12 h-12 mx-auto text-primary group-hover:scale-110 transition-transform" />}
                     {category === "Office" && <Award className="w-12 h-12 mx-auto text-primary group-hover:scale-110 transition-transform" />}

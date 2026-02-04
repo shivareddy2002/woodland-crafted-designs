@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 import videoLivingSpace1 from "@/assets/video-living-space-1.mp4";
 import videoLivingSpace2 from "@/assets/video-living-space-2.mp4";
@@ -36,6 +38,7 @@ const VideoShowcase = () => {
   const [isMuted, setIsMuted] = useState<{ [key: number]: boolean }>({});
   const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
   const sectionRef = useRef<HTMLElement>(null);
+  const { ref: animationRef, isVisible } = useScrollAnimation();
 
   // Autoplay videos when section comes into view
   useEffect(() => {
@@ -90,29 +93,47 @@ const VideoShowcase = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-background to-secondary/20">
+    <section ref={(el) => {
+      sectionRef.current = el;
+      if (animationRef && typeof animationRef === 'object' && 'current' in animationRef) {
+        (animationRef as React.MutableRefObject<HTMLElement | null>).current = el;
+      }
+    }} className="py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 lg:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+        <div className={cn(
+          "text-center mb-16 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
+          <span className={cn(
+            "inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 transition-all duration-500",
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          )} style={{ transitionDelay: "100ms" }}>
             Video Showcase
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Experience Our <span className="text-primary">Craftsmanship</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className={cn(
+            "text-muted-foreground text-lg max-w-2xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "200ms" }}>
             Immerse yourself in our world of premium interior design through stunning video walkthroughs
           </p>
         </div>
 
         {/* Video Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {videos.map((video) => (
+          {videos.map((video, index) => (
             <div
               key={video.id}
-              className="group relative bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className={cn(
+                "group relative bg-card rounded-2xl overflow-hidden shadow-lg hover-lift hover-glow transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${300 + index * 150}ms` }}
             >
-              {/* Video Container - responsive aspect ratio */}
+              {/* Video Container */}
               <div className="relative aspect-[9/16] sm:aspect-[9/14] lg:aspect-[9/16] overflow-hidden">
                 <video
                   ref={(el) => { videoRefs.current[video.id] = el; }}

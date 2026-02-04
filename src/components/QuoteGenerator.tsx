@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calculator, IndianRupee } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 const QuoteGenerator = () => {
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
@@ -13,6 +15,7 @@ const QuoteGenerator = () => {
   const [selectedCommercial, setSelectedCommercial] = useState<string[]>([]);
   const [area, setArea] = useState("");
   const [estimatedCost, setEstimatedCost] = useState<number | null>(null);
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   const materials = [
     { name: "Hdhmr Board", price: 120 },
@@ -125,19 +128,29 @@ const QuoteGenerator = () => {
   };
 
   return (
-    <section className="py-12 bg-wood-light">
+    <section className="py-12 bg-wood-light" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="text-center mb-10">
+        {/* Header */}
+        <div className={cn(
+          "text-center mb-10 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
             Instant Quote Generator
           </h2>
-          <p className="text-base text-wood-dark max-w-2xl mx-auto">
+          <p className={cn(
+            "text-base text-wood-dark max-w-2xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "150ms" }}>
             Get an estimated cost for your wood project instantly. Select materials and products to see pricing.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <Card className="border-wood-medium shadow-lg">
+        <div className={cn(
+          "max-w-5xl mx-auto transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )} style={{ transitionDelay: "300ms" }}>
+          <Card className="border-wood-medium shadow-lg hover-glow transition-all duration-500">
             <CardHeader className="bg-gradient-to-r from-primary/5 to-wood-light border-b border-wood-medium py-4">
               <CardTitle className="text-xl text-primary flex items-center">
                 <Calculator className="w-5 h-5 mr-2" />

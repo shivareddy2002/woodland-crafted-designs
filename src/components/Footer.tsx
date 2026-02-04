@@ -1,15 +1,44 @@
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { ref: footerRef, isVisible } = useScrollAnimation();
+
+  const quickLinks = [
+    { label: "Home", href: "#home" },
+    { label: "About Us", href: "#about" },
+    { label: "Products", href: "#products" },
+    { label: "Services", href: "#services" },
+    { label: "Apartments", href: "#apartments" },
+  ];
+
+  const services = [
+    "Custom Woodwork",
+    "Furnishing & Interiors",
+    "Installation & Maintenance",
+    "Design Consultation",
+    "Quality Guarantee",
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: "https://facebook.com/rupasthala.design.studio", label: "Facebook" },
+    { icon: Instagram, href: "https://instagram.com/rupasthala_design_studio", label: "Instagram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+  ];
 
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-primary text-primary-foreground py-12" ref={footerRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className={cn(
+            "space-y-4 transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}>
             <div className="flex items-center space-x-2">
               <img src={logo} alt="In Design Land Logo" className="w-8 h-8 rounded-lg object-cover" />
               <div>
@@ -24,48 +53,82 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className={cn(
+            "transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )} style={{ transitionDelay: "100ms" }}>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#home" className="opacity-90 hover:opacity-100 transition-opacity">Home</a></li>
-              <li><a href="#about" className="opacity-90 hover:opacity-100 transition-opacity">About Us</a></li>
-              <li><a href="#products" className="opacity-90 hover:opacity-100 transition-opacity">Products</a></li>
-              <li><a href="#services" className="opacity-90 hover:opacity-100 transition-opacity">Services</a></li>
-              <li><a href="#apartments" className="opacity-90 hover:opacity-100 transition-opacity">Apartments</a></li>
+              {quickLinks.map((link, index) => (
+                <li 
+                  key={link.label}
+                  className={cn(
+                    "transition-all duration-500 ease-out",
+                    isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                  )}
+                  style={{ transitionDelay: `${200 + index * 50}ms` }}
+                >
+                  <a href={link.href} className="opacity-90 hover:opacity-100 transition-opacity link-underline">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
-          <div>
+          <div className={cn(
+            "transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )} style={{ transitionDelay: "200ms" }}>
             <h3 className="font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li className="opacity-90">Custom Woodwork</li>
-              <li className="opacity-90">Furnishing & Interiors</li>
-              <li className="opacity-90">Installation & Maintenance</li>
-              <li className="opacity-90">Design Consultation</li>
-              <li className="opacity-90">Quality Guarantee</li>
+              {services.map((service, index) => (
+                <li 
+                  key={service}
+                  className={cn(
+                    "opacity-90 transition-all duration-500 ease-out",
+                    isVisible ? "opacity-90 translate-x-0" : "opacity-0 -translate-x-4"
+                  )}
+                  style={{ transitionDelay: `${300 + index * 50}ms` }}
+                >
+                  {service}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className={cn(
+            "transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )} style={{ transitionDelay: "300ms" }}>
             <h3 className="font-bold text-lg mb-4">Contact Info</h3>
             <div className="space-y-3 text-sm">
-              <div>
+              <div className={cn(
+                "transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              )} style={{ transitionDelay: "400ms" }}>
                 <div className="font-semibold">Phone:</div>
                 <div className="opacity-90">+91 9555222567</div>
               </div>
-              <div>
+              <div className={cn(
+                "transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              )} style={{ transitionDelay: "450ms" }}>
                 <div className="font-semibold">Email:</div>
                 <div className="opacity-90">indesignland@gmail.com</div>
               </div>
-              <div>
+              <div className={cn(
+                "transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              )} style={{ transitionDelay: "500ms" }}>
                 <div className="font-semibold">WhatsApp:</div>
                 <a 
                   href="https://wa.me/919555222567"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="opacity-90 hover:opacity-100 transition-opacity link-underline"
                 >
                   Chat with us
                 </a>
@@ -75,28 +138,48 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-primary-foreground/20 my-8"></div>
+        <div className={cn(
+          "border-t border-primary-foreground/20 my-8 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+        )} style={{ transitionDelay: "600ms" }}></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col items-center justify-center">
+        <div className={cn(
+          "flex flex-col items-center justify-center transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        )} style={{ transitionDelay: "700ms" }}>
           {/* Social Media Icons */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <a href="https://facebook.com/rupasthala.design.studio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Facebook className="w-5 h-5 sm:w-4 sm:h-4" />
-            </a>
-            <a href="https://instagram.com/rupasthala_design_studio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Instagram className="w-5 h-5 sm:w-4 sm:h-4" />
-            </a>
-            <a href="#" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Linkedin className="w-5 h-5 sm:w-4 sm:h-4" />
-            </a>
-            <a href="https://youtube.com/@rupasthala" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
+            {socialLinks.map((social, index) => (
+              <a 
+                key={social.label}
+                href={social.href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={cn(
+                  "w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110",
+                  isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                )}
+                style={{ transitionDelay: `${800 + index * 100}ms` }}
+                aria-label={social.label}
+              >
+                <social.icon className="w-5 h-5 sm:w-4 sm:h-4" />
+              </a>
+            ))}
+            <a 
+              href="https://youtube.com/@rupasthala" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={cn(
+                "w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110",
+                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+              )}
+              style={{ transitionDelay: "1000ms" }}
+              aria-label="YouTube"
+            >
               <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a2.999 2.999 0 0 0-2.108-2.124C19.598 3.5 12 3.5 12 3.5s-7.598 0-9.39.562A2.999 2.999 0 0 0 .502 6.186C0 7.986 0 12 0 12s0 4.014.502 5.814a2.999 2.999 0 0 0 2.108 2.124C4.402 20.5 12 20.5 12 20.5s7.598 0 9.39-.562a2.999 2.999 0 0 0 2.108-2.124C24 16.014 24 12 24 12s0-4.014-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
-            </a>
-            <a href="#" className="w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110">
-              <Twitter className="w-5 h-5 sm:w-4 sm:h-4" />
             </a>
           </div>
         </div>

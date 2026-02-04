@@ -1,7 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Hammer, TreePine, DollarSign, Award, Users, Shield } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 const WhyChooseUs = () => {
+  const { ref: sectionRef, isVisible } = useScrollAnimation();
+
   const reasons = [
     {
       icon: Hammer,
@@ -36,27 +40,39 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 bg-wood-light">
+    <section id="why-choose-us" className="py-20 bg-wood-light" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className={cn(
+          "text-center mb-16 transition-all duration-700 ease-out",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Discover the Beauty of Wood
           </h2>
-          <p className="text-lg text-wood-dark max-w-3xl mx-auto">
+          <p className={cn(
+            "text-lg text-wood-dark max-w-3xl mx-auto transition-all duration-700 ease-out",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )} style={{ transitionDelay: "150ms" }}>
             Experience the perfect blend of craftsmanship, sustainability, affordability, and design excellence. 
             We transform spaces with premium wood solutions that stand the test of time.
           </p>
         </div>
 
+        {/* Reasons Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
             <Card 
               key={index}
-              className="group border-wood-medium hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-b from-card to-background"
+              className={cn(
+                "group border-wood-medium hover-lift hover-glow bg-gradient-to-b from-card to-background transition-all duration-500 ease-out",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
               <CardContent className="p-8 text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <reason.icon className="w-10 h-10 text-primary" />
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <reason.icon className="w-10 h-10 text-primary icon-hover" />
                 </div>
                 
                 <h3 className="text-xl font-bold text-primary mb-4">
@@ -70,7 +86,6 @@ const WhyChooseUs = () => {
             </Card>
           ))}
         </div>
-
       </div>
     </section>
   );
