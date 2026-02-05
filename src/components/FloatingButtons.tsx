@@ -6,12 +6,12 @@ const FloatingButtons = () => {
   const [showTooltips, setShowTooltips] = useState(false);
   const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
 
-  const scrollToQuote = () => {
-    const quoteSection = document.getElementById('quote-generator');
-    if (quoteSection) {
-      quoteSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const scrollToQuote = () => {
+  //   const quoteSection = document.getElementById('quote-generator');
+  //   if (quoteSection) {
+  //     quoteSection.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
     <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
@@ -24,17 +24,31 @@ const FloatingButtons = () => {
         
         {/* Main Button */}
         <button
+          type="button"
+          aria-label="Open WhatsApp Chat"
           onClick={() => setIsWhatsAppModalOpen(true)}
-          className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+          className="relative flex items-center justify-center w-16 h-16 rounded-full
+                    bg-gradient-to-r from-green-500 to-green-600
+                    hover:from-green-600 hover:to-green-700
+                    text-white shadow-2xl hover:shadow-2xl
+                    transition-all duration-300 ease-out
+                    hover:scale-105 active:scale-95"
+        >
+          <MessageCircle className="w-7 h-7" />
+        </button>
+
+        {/* <button
+          onClick={() => setIsWhatsAppModalOpen(true)}
+          className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-full shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
         >
           <MessageCircle className="w-7 h-7" />
           
-        </button>
+        </button> */}
         
         {/* Enhanced Tooltip */}
         <div className="absolute right-20 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg">
           <div className="font-semibold">💬 Chat with us!</div>
-          <div className="text-xs opacity-90">Get instant support</div>
+          {/* <div className="text-xs opacity-90">Get instant support</div> */}
           {/* Arrow */}
           <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-l-8 border-l-primary border-t-4 border-b-4 border-t-transparent border-b-transparent"></div>
         </div>
@@ -49,12 +63,12 @@ const FloatingButtons = () => {
           <Phone className="w-6 h-6" />
         </a>
         <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-          Call Now
+          📞 Call Now
         </div>
       </div>
 
       {/* Get Quote Button */}
-      <div className="relative group">
+      {/* <div className="relative group">
         <button
           onClick={scrollToQuote}
           className="flex items-center justify-center w-14 h-14 bg-wood-accent hover:bg-wood-accent/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
@@ -64,7 +78,7 @@ const FloatingButtons = () => {
         <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           Get Quote
         </div>
-      </div>
+      </div> */}
 
       {/* WhatsApp Chat Modal */}
       <WhatsAppChatModal

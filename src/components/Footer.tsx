@@ -9,10 +9,13 @@ const Footer = () => {
 
   const quickLinks = [
     { label: "Home", href: "#home" },
-    { label: "About Us", href: "#about" },
     { label: "Products", href: "#products" },
-    { label: "Services", href: "#services" },
-    { label: "Apartments", href: "#apartments" },
+    { label: "Process", href: "#OurProcess" },
+    // { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#customer-projects" },
+    { label: "About Us", href: "#about" },
+    // { label: "Contact", href: "#contact" },
+    
   ];
 
   const services = [
@@ -26,8 +29,8 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com/rupasthala.design.studio", label: "Facebook" },
     { icon: Instagram, href: "https://instagram.com/rupasthala_design_studio", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    // { icon: Linkedin, href: "#", label: "LinkedIn" },
+    // { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
   return (
@@ -47,8 +50,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm opacity-90 leading-relaxed">
-              Crafting exceptional wood solutions with passion and precision. 
-              Quality, sustainability, and craftsmanship in every piece.
+              Crafting exceptional wood solutions with passion and precision. Quality, sustainability, and craftsmanship in every piece.
             </p>
           </div>
 
@@ -130,7 +132,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="opacity-90 hover:opacity-100 transition-opacity link-underline"
                 >
-                  Chat with us
+                  +91 9555222567
                 </a>
               </div>
             </div>

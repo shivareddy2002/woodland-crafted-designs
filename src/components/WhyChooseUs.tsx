@@ -48,7 +48,8 @@ const WhyChooseUs = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Discover the Beauty of Wood
+            {/* Discover the Beauty of Wood */}
+            Excellence by IDL
           </h2>
           <p className={cn(
             "text-lg text-wood-dark max-w-3xl mx-auto transition-all duration-700 ease-out",

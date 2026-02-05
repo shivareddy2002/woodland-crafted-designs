@@ -25,18 +25,18 @@ const Index = () => {
         <Hero />
         <FeaturedProducts />
         <ApartmentTypes />
-        <About />
         <OurProcess />
         <VideoShowcase />
-        <Services />
+        {/* <Services /> */}
         <FeaturedCustomerProjects />
         <WhyChooseUs />
-        <Testimonials />
-        <Blog />
+        {/* <Testimonials /> */}
+        {/* <Blog /> */}
         <ProjectLocationsMap />
-        <div id="quote-generator">
+        {/* <div id="quote-generator">
           <QuoteGenerator />
-        </div>
+        </div> */}
+        <About />
         <Contact />
         <FindUs />
       </main>

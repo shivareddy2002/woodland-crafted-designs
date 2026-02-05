@@ -8,13 +8,13 @@ import heroGuesthouseKarthikImage from "@/assets/hero-guesthouse-karthik.jpg";
 import heroHotelKavyaImage from "@/assets/hero-hotel-kavya.jpg";
 import heroPenthouseKalyaniImage from "@/assets/hero-penthouse-kalyani.jpg";
 
-// Project 1 - Mr. Ramesh 2BHK
+// Project 1 - Mr. Naresh 2BHK
 import bedroomRameshImage from "@/assets/bedroom-ramesh.jpg";
 import bathroomRameshImage from "@/assets/bathroom-ramesh.jpg";
 import livingRameshImage from "@/assets/living-ramesh.jpg";
 import kitchenRameshImage from "@/assets/kitchen-ramesh.jpg";
 
-// Project 2 - Mr. Shiva 3BHK
+// Project 2 - Mrs. Subhashini 3BHK
 import masterBedroomShivaImage from "@/assets/master-bedroom-shiva.jpg";
 import kidsBedroomShivaImage from "@/assets/kids-bedroom-shiva.jpg";
 import bathroomShivaImage from "@/assets/bathroom-shiva.jpg";
@@ -63,15 +63,15 @@ const FeaturedCustomerProjects = () => {
     {
       category: "2BHK Home",
       icon: "🛏️",
-      title: "Mr. Ramesh — 2BHK Home Interiors",
-      customer: "Mr. Ramesh",
+      title: "Mr. Naresh — 2BHK Home Interiors",
+      customer: "Mr. Naresh",
       location: "Hyderabad",
       image: hero2BHKRameshImage,
       description: "Elegant 2BHK featuring two bedrooms, two bathrooms, a modern living room, and modular kitchen — designed with teak wood finish and subtle lighting.",
-      duration: "6 Weeks",
-      budget: "₹5,50,000",
+      duration: "2 Months",
+      // budget: "₹5,50,000",
       testimonial: "Absolutely loved the craftsmanship and attention to detail. The team was professional and completed everything on time.",
-      detailedOverview: "Mr. Ramesh wanted a complete 2BHK transformation that combined modern aesthetics with traditional warmth. We designed each space with premium teakwood finishes, incorporated smart storage solutions, and created a cohesive flow throughout the home.",
+      detailedOverview: "Mr. Naresh wanted a complete 2BHK transformation that combined modern aesthetics with traditional warmth. We designed each space with premium teakwood finishes, incorporated smart storage solutions, and created a cohesive flow throughout the home.",
       subSections: [
         {
           name: "Bedroom",
@@ -98,15 +98,15 @@ const FeaturedCustomerProjects = () => {
     {
       category: "3BHK Home",
       icon: "🏠",
-      title: "Mr. Shiva — 3BHK Premium Residence",
-      customer: "Mr. Shiva",
-      location: "Bengaluru",
+      title: "Mrs. Subhashini — 3BHK Premium Residence",
+      customer: "Mrs. Subhashini",
+      location: "Hyderabad",
       image: hero3BHKShivaImage,
       description: "Spacious 3BHK with three bedrooms, three bathrooms, a luxurious hall, and an advanced modular kitchen.",
-      duration: "8 Weeks",
-      budget: "₹8,75,000",
+      duration: "3 Months",
+      // budget: "₹8,75,000",
       testimonial: "The transformation exceeded our expectations. Every detail was thoughtfully designed and expertly executed.",
-      detailedOverview: "Mr. Shiva's 3BHK residence was designed to reflect modern luxury while maintaining family-friendly functionality. We incorporated elegant wooden flooring, contemporary lighting solutions, and created dedicated spaces for each family member.",
+      detailedOverview: "Mrs. Subhashini's 3BHK residence was designed to reflect modern luxury while maintaining family-friendly functionality. We incorporated elegant wooden flooring, contemporary lighting solutions, and created dedicated spaces for each family member.",
       subSections: [
         {
           name: "Master Bedroom",
@@ -135,41 +135,41 @@ const FeaturedCustomerProjects = () => {
         }
       ]
     },
-    {
-      category: "Office",
-      icon: "🏢",
-      title: "Mr. Sanjay — Office Interiors (TechWave Pvt. Ltd.)",
-      customer: "TechWave Pvt. Ltd.",
-      location: "Hyderabad",
-      image: heroOfficeTechWaveImage,
-      description: "Corporate workspace with reception, ergonomic workstations, meeting rooms, and refreshment zone.",
-      duration: "10 Weeks",
-      budget: "₹15,50,000",
-      testimonial: "Our team loves the new workspace ambiance. Productivity has noticeably improved! The design is both professional and welcoming.",
-      detailedOverview: "TechWave needed a modern office that fostered collaboration while maintaining professionalism. We designed ergonomic workstations, created acoustic solutions for better focus, and incorporated branded elements throughout the space.",
-      subSections: [
-        {
-          name: "Reception",
-          image: receptionOfficeImage,
-          description: "Sleek wood-paneled front desk and wall branding. Creates a powerful first impression with professional elegance and welcoming ambiance."
-        },
-        {
-          name: "Workstations",
-          image: workstationsOfficeImage,
-          description: "Modular desks with wooden partitions. Designed for optimal productivity with ergonomic features and efficient space utilization for the team."
-        },
-        {
-          name: "Meeting Room",
-          image: meetingOfficeImage,
-          description: "Teakwood conference table and acoustic panels. Professional space designed for productive meetings with modern technology integration."
-        },
-        {
-          name: "Refreshment Zone",
-          image: refreshmentOfficeImage,
-          description: "Compact pantry with warm wooden finishes. A comfortable break area that promotes team bonding and relaxation."
-        }
-      ]
-    },
+    // {
+    //   category: "Office",
+    //   icon: "🏢",
+    //   title: "Mr. Sanjay — Office Interiors (TechWave Pvt. Ltd.)",
+    //   customer: "TechWave Pvt. Ltd.",
+    //   location: "Hyderabad",
+    //   image: heroOfficeTechWaveImage,
+    //   description: "Corporate workspace with reception, ergonomic workstations, meeting rooms, and refreshment zone.",
+    //   duration: "10 Weeks",
+    //   budget: "₹15,50,000",
+    //   testimonial: "Our team loves the new workspace ambiance. Productivity has noticeably improved! The design is both professional and welcoming.",
+    //   detailedOverview: "TechWave needed a modern office that fostered collaboration while maintaining professionalism. We designed ergonomic workstations, created acoustic solutions for better focus, and incorporated branded elements throughout the space.",
+    //   subSections: [
+    //     {
+    //       name: "Reception",
+    //       image: receptionOfficeImage,
+    //       description: "Sleek wood-paneled front desk and wall branding. Creates a powerful first impression with professional elegance and welcoming ambiance."
+    //     },
+    //     {
+    //       name: "Workstations",
+    //       image: workstationsOfficeImage,
+    //       description: "Modular desks with wooden partitions. Designed for optimal productivity with ergonomic features and efficient space utilization for the team."
+    //     },
+    //     {
+    //       name: "Meeting Room",
+    //       image: meetingOfficeImage,
+    //       description: "Teakwood conference table and acoustic panels. Professional space designed for productive meetings with modern technology integration."
+    //     },
+    //     {
+    //       name: "Refreshment Zone",
+    //       image: refreshmentOfficeImage,
+    //       description: "Compact pantry with warm wooden finishes. A comfortable break area that promotes team bonding and relaxation."
+    //     }
+    //   ]
+    // },
     {
       category: "Guesthouse",
       icon: "🏡",
@@ -178,8 +178,8 @@ const FeaturedCustomerProjects = () => {
       location: "Chennai",
       image: heroGuesthouseKarthikImage,
       description: "Designed for comfort and hospitality — reception, guest rooms, dining, parking, and outdoor areas.",
-      duration: "12 Weeks",
-      budget: "₹12,25,000",
+      duration: "3 Months",
+      // budget: "₹12,25,000",
       testimonial: "The guesthouse has become a favorite retreat for our guests. The wooden accents create a warm, inviting atmosphere.",
       detailedOverview: "Mr. Karthik's guesthouse was designed with hospitality at its core. We created welcoming spaces using polished wood paneling, ensured comfort in every guest room, and integrated indoor and outdoor areas seamlessly.",
       subSections: [
@@ -205,81 +205,81 @@ const FeaturedCustomerProjects = () => {
         }
       ]
     },
-    {
-      category: "Hotel",
-      icon: "🏨",
-      title: "Mrs. Kavya — Hotel Interiors",
-      customer: "Mrs. Kavya",
-      location: "Bengaluru",
-      image: heroHotelKavyaImage,
-      description: "Full hotel interior design — from reception to service zones with elegant wood decor.",
-      duration: "16 Weeks",
-      budget: "₹28,50,000",
-      testimonial: "The hotel interiors have received countless compliments from our guests. The wood finishes add warmth and luxury throughout.",
-      detailedOverview: "Mrs. Kavya's hotel required a comprehensive design approach that balanced luxury with functionality. We created a grand lobby with wooden ceiling accents, designed comfortable guest rooms, and ensured all service areas were both beautiful and efficient.",
-      subSections: [
-        {
-          name: "Reception",
-          image: receptionHotelImage,
-          description: "Grand lobby with wooden ceiling and marble flooring. Impressive entrance that sets the standard for luxury and hospitality."
-        },
-        {
-          name: "Guest Rooms",
-          image: guestroomsHotelImage,
-          description: "Modern comfort with warm wood wall panels. Each room designed to provide a luxurious stay experience with contemporary amenities."
-        },
-        {
-          name: "Dining Area",
-          image: diningHotelImage,
-          description: "Multi-table setup with soft lighting. Elegant restaurant space designed for memorable dining experiences."
-        },
-        {
-          name: "Service Area",
-          image: serviceHotelImage,
-          description: "Functional wooden storage units. Efficient back-of-house spaces that support seamless hotel operations."
-        },
-        {
-          name: "Safety & Accessibility",
-          image: safetyHotelImage,
-          description: "Secure wood partitions and signage. Comprehensive safety features integrated elegantly into the design."
-        }
-      ]
-    },
-    {
-      category: "Penthouse",
-      icon: "🌇",
-      title: "Mrs. Kalyani — Luxury Penthouse Interiors",
-      customer: "Mrs. Kalyani",
-      location: "Mumbai",
-      image: heroPenthouseKalyaniImage,
-      description: "Premium penthouse featuring open-plan living, elegant bedrooms, modern kitchen, and scenic terrace.",
-      duration: "14 Weeks",
-      budget: "₹22,75,000",
-      testimonial: "Living in this penthouse feels like a dream. The attention to detail and quality of materials is exceptional.",
-      detailedOverview: "Mrs. Kalyani's luxury penthouse was designed to maximize the stunning city views while creating sophisticated living spaces. We used premium teak furniture, incorporated high-gloss wood cabinetry, and created seamless indoor-outdoor transitions.",
-      subSections: [
-        {
-          name: "Living Area",
-          image: livingPenthouseImage,
-          description: "Open concept with luxury teak furniture. Expansive space designed for entertaining with breathtaking views and sophisticated finishes."
-        },
-        {
-          name: "Bedrooms",
-          image: bedroomsPenthouseImage,
-          description: "Artistic interiors with warm tones. Private retreats designed for ultimate comfort and relaxation with custom wooden elements."
-        },
-        {
-          name: "Kitchen",
-          image: kitchenPenthouseImage,
-          description: "Minimalist high-gloss wood cabinetry. State-of-the-art kitchen combining beauty with cutting-edge functionality."
-        },
-        {
-          name: "Terrace",
-          image: terracePenthouseImage,
-          description: "Lounge-style open space with wooden flooring and skyline view. Spectacular outdoor living area perfect for relaxation and entertainment."
-        }
-      ]
-    }
+    // {
+    //   category: "Hotel",
+    //   icon: "🏨",
+    //   title: "Mrs. Kavya — Hotel Interiors",
+    //   customer: "Mrs. Kavya",
+    //   location: "Bengaluru",
+    //   image: heroHotelKavyaImage,
+    //   description: "Full hotel interior design — from reception to service zones with elegant wood decor.",
+    //   duration: "16 Weeks",
+    //   budget: "₹28,50,000",
+    //   testimonial: "The hotel interiors have received countless compliments from our guests. The wood finishes add warmth and luxury throughout.",
+    //   detailedOverview: "Mrs. Kavya's hotel required a comprehensive design approach that balanced luxury with functionality. We created a grand lobby with wooden ceiling accents, designed comfortable guest rooms, and ensured all service areas were both beautiful and efficient.",
+    //   subSections: [
+    //     {
+    //       name: "Reception",
+    //       image: receptionHotelImage,
+    //       description: "Grand lobby with wooden ceiling and marble flooring. Impressive entrance that sets the standard for luxury and hospitality."
+    //     },
+    //     {
+    //       name: "Guest Rooms",
+    //       image: guestroomsHotelImage,
+    //       description: "Modern comfort with warm wood wall panels. Each room designed to provide a luxurious stay experience with contemporary amenities."
+    //     },
+    //     {
+    //       name: "Dining Area",
+    //       image: diningHotelImage,
+    //       description: "Multi-table setup with soft lighting. Elegant restaurant space designed for memorable dining experiences."
+    //     },
+    //     {
+    //       name: "Service Area",
+    //       image: serviceHotelImage,
+    //       description: "Functional wooden storage units. Efficient back-of-house spaces that support seamless hotel operations."
+    //     },
+    //     {
+    //       name: "Safety & Accessibility",
+    //       image: safetyHotelImage,
+    //       description: "Secure wood partitions and signage. Comprehensive safety features integrated elegantly into the design."
+    //     }
+    //   ]
+    // },
+    // {
+    //   category: "Penthouse",
+    //   icon: "🌇",
+    //   title: "Mrs. Kalyani — Luxury Penthouse Interiors",
+    //   customer: "Mrs. Kalyani",
+    //   location: "Mumbai",
+    //   image: heroPenthouseKalyaniImage,
+    //   description: "Premium penthouse featuring open-plan living, elegant bedrooms, modern kitchen, and scenic terrace.",
+    //   duration: "14 Weeks",
+    //   budget: "₹22,75,000",
+    //   testimonial: "Living in this penthouse feels like a dream. The attention to detail and quality of materials is exceptional.",
+    //   detailedOverview: "Mrs. Kalyani's luxury penthouse was designed to maximize the stunning city views while creating sophisticated living spaces. We used premium teak furniture, incorporated high-gloss wood cabinetry, and created seamless indoor-outdoor transitions.",
+    //   subSections: [
+    //     {
+    //       name: "Living Area",
+    //       image: livingPenthouseImage,
+    //       description: "Open concept with luxury teak furniture. Expansive space designed for entertaining with breathtaking views and sophisticated finishes."
+    //     },
+    //     {
+    //       name: "Bedrooms",
+    //       image: bedroomsPenthouseImage,
+    //       description: "Artistic interiors with warm tones. Private retreats designed for ultimate comfort and relaxation with custom wooden elements."
+    //     },
+    //     {
+    //       name: "Kitchen",
+    //       image: kitchenPenthouseImage,
+    //       description: "Minimalist high-gloss wood cabinetry. State-of-the-art kitchen combining beauty with cutting-edge functionality."
+    //     },
+    //     {
+    //       name: "Terrace",
+    //       image: terracePenthouseImage,
+    //       description: "Lounge-style open space with wooden flooring and skyline view. Spectacular outdoor living area perfect for relaxation and entertainment."
+    //     }
+    //   ]
+    // }
   ];
 
   return (
@@ -456,10 +456,10 @@ const FeaturedCustomerProjects = () => {
                   </div>
 
                   {/* Budget */}
-                  <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  {/* <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
                     <p className="text-sm text-muted-foreground mb-1">Project Investment</p>
                     <p className="text-2xl font-bold text-primary">{selectedProject.budget}</p>
-                  </div>
+                  </div> */}
 
                   {/* Testimonial */}
                   <div className="bg-muted/50 rounded-lg p-6 border border-border">
@@ -473,7 +473,7 @@ const FeaturedCustomerProjects = () => {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                  {/* <div className="flex flex-col sm:flex-row gap-3 pt-4">
                     <a href="#contact" className="flex-1" onClick={() => setSelectedProject(null)}>
                       <Button className="w-full" size="lg">
                         Start Similar Project
@@ -484,7 +484,7 @@ const FeaturedCustomerProjects = () => {
                         Get Free Quote
                       </Button>
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </>
             )}
@@ -492,7 +492,7 @@ const FeaturedCustomerProjects = () => {
         </Dialog>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 p-8 rounded-xl border border-primary/20">
             <h3 className="text-2xl font-bold text-foreground mb-4">
               Want to See Your Project Featured Here?
@@ -506,7 +506,7 @@ const FeaturedCustomerProjects = () => {
               </button>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

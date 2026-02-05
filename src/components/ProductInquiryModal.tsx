@@ -68,7 +68,7 @@ const ProductInquiryModal = ({ isOpen, onClose, product }: ProductInquiryModalPr
             
             {/* Starting Price */}
             <div className="flex items-center space-x-2">
-              <span className="text-wood-dark font-medium">Starting from:</span>
+              {/* <span className="text-wood-dark font-medium">Starting from:</span> */}
               <span className="text-2xl font-bold text-primary">{product.startingPrice}</span>
             </div>
           </div>
@@ -91,20 +91,20 @@ const ProductInquiryModal = ({ isOpen, onClose, product }: ProductInquiryModalPr
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-wood-medium/30">
-            <Button 
+            {/* <Button 
               onClick={handleQuoteRequest}
               className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               Request a Quote
-            </Button>
+            </Button> */}
             <Button 
               onClick={handleConsultation}
               variant="outline"
-              className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               Book a Consultation
             </Button>
-          </div>
+          </div> 
         </div>
       </DialogContent>
     </Dialog>

@@ -27,7 +27,7 @@ const FindUs = () => {
             "text-lg text-wood-dark max-w-2xl mx-auto transition-all duration-700 ease-out",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )} style={{ transitionDelay: "150ms" }}>
-            Visit our showroom and workshop to see our premium wood solutions in person. We're located at IDL.
+            Visit our showroom and workshop to see our premium wood solutions in person. We're located at Andhra Pradesh, India.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ const FindUs = () => {
           )} style={{ transitionDelay: "300ms" }}>
             <Card className="bg-card border border-wood-medium h-full hover-glow transition-all duration-500">
               <CardContent className="p-8 h-full flex flex-col">
-                <h3 className="text-2xl font-bold text-primary mb-6">Visit Our Location</h3>
+                <h3 className="text-2xl font-bold text-primary mb-6">Visit Our Factory</h3>
                 
                 <div className="space-y-4 flex-grow">
                   <div className={cn(

@@ -57,78 +57,62 @@ const ApartmentTypes = () => {
   const apartments = [
     {
       type: "1BHK Apartment",
-      size: "700 sq.ft.",
+      // size: "700 sq.ft.",
       image: apartment1bhk,
       features: ["Compact design", "Smart storage", "Modern wood finishes", "Ideal for singles/couples"],
       button: "View 1BHK",
-      bedrooms: 1,
-      bathrooms: 1,
-      halls: 1,
-      kitchens: 1,
-      balconies: 1,
+      // bedrooms: 1, bathrooms: 1, halls: 1, kitchens: 1, balconies: 1,
+      spaces: ["Bedroom", "Bathroom", "Hall", "Kitchen", "Balcony"],
       extraFeatures: ["Smart storage solutions"],
       highlights: ["Compact design", "Smart storage", "Modern wood finishes", "Ideal for singles/couples"],
-      price: "₹200,000 onwards"
+      // price: "₹200,000 onwards"
     },
     {
       type: "2BHK Apartment", 
-      size: "1200 sq.ft.",
+      // size: "1200 sq.ft.",
       image: apartment2bhk,
       features: ["Spacious layout", "Family-friendly", "Premium wood interiors", "Open kitchen concept"],
       button: "View 2BHK",
-      bedrooms: 2,
-      bathrooms: 2,
-      halls: 1,
-      kitchens: 1,
-      balconies: 1,
+      // bedrooms: 2, bathrooms: 2, halls: 1, kitchens: 1, balconies: 1,
+
+      spaces: ["Master Bedroom", "Child Bedroom", "Bathroom", "Hall", "Kitchen", "Balcony"]
+,
       extraFeatures: ["Open kitchen concept"],
       highlights: ["Spacious layout", "Family-friendly", "Premium wood interiors", "Open kitchen concept"],
-      price: "₹400,000 onwards"
+      // price: "₹400,000 onwards"
     },
     {
       type: "3BHK Apartment",
-      size: "1800 sq.ft.",
+      // size: "1800 sq.ft.",
       image: apartment3bhk,
       features: ["Luxury living", "Multiple bedrooms", "Custom wood work", "Entertainment spaces"],
       button: "View 3BHK",
-      bedrooms: 3,
-      bathrooms: 2,
-      halls: 1,
-      kitchens: 1,
-      balconies: 2,
+      spaces: ["Bedrooms", "Bathrooms", "Hall", "Kitchen", "Balcony", "Home Office", "Reading Nook"],
       extraFeatures: ["Entertainment room", "Walk-in closet"],
       highlights: ["Luxury living", "Multiple bedrooms", "Custom wood work", "Entertainment spaces"],
-      price: "₹600,000 onwards"
+      // price: "₹600,000 onwards"
     },
     {
       type: "4BHK Apartment",
-      size: "2400 sq.ft.",
+      // size: "2400 sq.ft.",
       image: apartment4bhk,
       features: ["Premium interiors", "Master suite", "Study room", "Multiple storage areas"],
       button: "View 4BHK",
-      bedrooms: 4,
-      bathrooms: 3,
-      halls: 1,
-      kitchens: 1,
-      balconies: 2,
+      spaces: ["Bedrooms", "Bathrooms", "Hall", "Kitchen", "Balcony", "Home Office", "Music Room",],
       extraFeatures: ["Master suite", "Study room", "Walk-in closet"],
       highlights: ["Premium interiors", "Master suite", "Study room", "Multiple storage areas"],
-      price: "₹800,000 onwards"
+      // price: "₹800,000 onwards"
     },
     {
       type: "5BHK Apartment",
-      size: "3000+ sq.ft.",
+      // size: "3000+ sq.ft.",
       image: apartment5bhk,
       features: ["Ultra-luxury", "Penthouse design", "Premium finishes", "Entertainment rooms"],
       button: "View 5BHK",
-      bedrooms: 5,
-      bathrooms: 4,
-      halls: 2,
-      kitchens: 1,
-      balconies: 3,
+      spaces: ["Bedrooms", "Bathrooms", "Hall", "Kitchen", "Balcony", "Home Theater", "Music Room", "Bar Lounge"],
       extraFeatures: ["Entertainment room", "Home theater", "Walk-in closet", "Terrace garden"],
       highlights: ["Ultra-luxury", "Penthouse design", "Premium finishes", "Entertainment rooms"],
-      price: "₹1,200,000 onwards"
+      // price: "₹1,200,000 onwards"
     },
   ];
 
@@ -146,14 +130,13 @@ const ApartmentTypes = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Apartment Solutions
+            Space Solutions
           </h2>
           <p className={cn(
             "text-lg text-wood-dark max-w-2xl mx-auto transition-all duration-700 ease-out",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )} style={{ transitionDelay: "150ms" }}>
-            Complete wood furnishing solutions for apartments of all sizes. From compact 1BHK to luxurious 5BHK penthouses.
-          </p>
+            Complete wood furnishing solutions for all kinds of spaces and sizes. From compact 1BHK apartments to luxurious 5BHK penthouses, offices, guest houses, villas, and premium resorts.          </p>
         </div>
 
         {/* Apartments Carousel */}
@@ -211,17 +194,17 @@ const ApartmentTypes = () => {
                         alt={apartment.type}
                         className="w-full h-56 object-cover image-zoom"
                       />
-                      <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full font-semibold text-sm">
+                      {/* <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full font-semibold text-sm">
                         {apartment.size}
-                      </div>
+                      </div> */}
                     </div>
                     
                     <CardContent className="p-6 bg-gradient-to-b from-card to-wood-light flex flex-col flex-grow">
-                      <h3 className="text-2xl font-bold text-primary mb-4">
+                      <h3 className="text-2xl font-bold text-primary mb-3">
                         {apartment.type}
                       </h3>
                       
-                      <ul className="space-y-2 mb-6 flex-grow">
+                      <ul className="space-y-2 mb-4 flex-grow">
                         {apartment.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center text-wood-dark">
                             <div className="w-2 h-2 bg-wood-accent rounded-full mr-3"></div>
@@ -244,7 +227,7 @@ const ApartmentTypes = () => {
           </div>
 
           {/* Mobile Navigation Dots */}
-          <div className="flex justify-center gap-2 mt-6 md:hidden">
+          <div className="flex justify-center gap-2 mt-4 md:hidden">
             {apartments.map((_, index) => (
               <button
                 key={index}

@@ -47,10 +47,10 @@ const Contact = () => {
       <div className="container mx-auto px-4 lg:px-6">
         {/* Header */}
         <div className={cn(
-          "text-center mb-16 transition-all duration-700 ease-out",
+          "text-center mb-10 transition-all duration-700 ease-out",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-3">
             Get In Touch
           </h2>
           <p className={cn(
@@ -69,7 +69,7 @@ const Contact = () => {
           )} style={{ transitionDelay: "300ms" }}>
             <Card className="border-wood-medium h-full hover-glow transition-all duration-500">
               <CardContent className="p-8 h-full flex flex-col">
-                <h3 className="text-2xl font-bold text-primary mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-primary mb-3">Contact Information</h3>
                 <div className="space-y-4 flex-grow">
                   {contactInfo.map((info, index) => (
                     <Card 
@@ -80,7 +80,7 @@ const Contact = () => {
                       )}
                       style={{ transitionDelay: `${400 + index * 100}ms` }}
                     >
-                      <CardContent className="p-6 flex items-center space-x-4">
+                      <CardContent className="p-2 flex items-center space-x-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
                           <info.icon className="w-6 h-6 text-primary" />
                         </div>
@@ -95,7 +95,7 @@ const Contact = () => {
 
                 {/* Quick Contact Buttons */}
                 <div className={cn(
-                  "space-y-4 mt-8 transition-all duration-700 ease-out",
+                  "space-y-4 mt-4 transition-all duration-700 ease-out",
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 )} style={{ transitionDelay: "800ms" }}>
                   <h4 className="text-lg font-bold text-primary">Quick Contact</h4>

@@ -8,16 +8,15 @@ import { Button } from '@/components/ui/button';
 const ProjectLocationsMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<L.Map | null>(null);
-  const [totalProjects] = useState(100);
+  const [totalProjects] = useState(30);
 
   const locations = [
-    { city: 'Hyderabad', coords: [17.3850, 78.4867], projects: 30 },
-    { city: 'Bengaluru', coords: [12.9716, 77.5946], projects: 20 },
-    { city: 'Mumbai', coords: [19.0760, 72.8777], projects: 15 },
-    { city: 'Kadapa', coords: [14.4673, 78.8242], projects: 10 },
-    { city: 'Chennai', coords: [13.0827, 80.2707], projects: 10 },
-    { city: 'Pune', coords: [18.5204, 73.8567], projects: 8 },
-    { city: 'Vizag', coords: [17.6868, 83.2185], projects: 7 },
+    { city: 'Hyderabad', coords: [17.3850, 78.4867], projects: 10 },
+    { city: 'Bengaluru', coords: [12.9716, 77.5946], projects: 7 },
+    { city: 'Kadapa', coords: [14.4673, 78.8242], projects: 5 },
+    { city: 'Vizag', coords: [17.6868, 83.2185], projects: 5 },
+    { city: 'Mumbai', coords: [19.0760, 72.8777], projects: 3 },
+
   ];
 
   useEffect(() => {
@@ -83,7 +82,7 @@ const ProjectLocationsMap = () => {
   return (
     <section id="project-map" className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-8 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
             <MapPin className="w-5 h-5 text-primary" />
             <span className="text-sm font-semibold text-primary">Our Presence Across India</span>
@@ -97,7 +96,7 @@ const ProjectLocationsMap = () => {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 animate-fade-in">
           <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
             <CardContent className="p-6 text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
@@ -127,7 +126,7 @@ const ProjectLocationsMap = () => {
                   <path d="M2 12l10 5 10-5"/>
                 </svg>
               </div>
-              <div className="text-3xl font-bold text-primary mb-1">500+</div>
+              <div className="text-3xl font-bold text-primary mb-1">30+</div>
               <div className="text-sm text-muted-foreground">Happy Customers</div>
             </CardContent>
           </Card>
@@ -135,14 +134,15 @@ const ProjectLocationsMap = () => {
 
         {/* Map Container */}
         <div className="space-y-8 animate-fade-in">
-          <div 
-            ref={mapContainer} 
-            className="w-full h-[500px] rounded-2xl shadow-2xl overflow-hidden border-4 border-border"
-          />
-
+          <div className="relative z-0">
+            <div
+              ref={mapContainer}
+              className="w-full lg:w-[80%] h-[500px] mx-auto rounded-2xl shadow-2xl overflow-hidden border-4 border-border"
+            />
+          </div>
             {/* City Legend */}
             <div className="bg-card border border-border rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-primary" />
                 Project Distribution by City
               </h3>
@@ -165,7 +165,7 @@ const ProjectLocationsMap = () => {
             </div>
 
           {/* Call to Action */}
-          <div className="text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 p-8 rounded-xl border border-primary/20">
+          {/* <div className="text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 p-8 rounded-xl border border-primary/20">
             <h3 className="text-2xl font-bold text-foreground mb-3">
               From Hyderabad to Mumbai
             </h3>
@@ -188,7 +188,7 @@ const ProjectLocationsMap = () => {
                 Expanding our footprint — coming soon to Delhi & Kochi! 🚀
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

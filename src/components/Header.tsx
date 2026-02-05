@@ -18,11 +18,12 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
     { label: "Products", href: "#products" },
-    { label: "Services", href: "#services" },
+    { label: "Process", href: "#OurProcess" },
+    // { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#customer-projects" },
-    { label: "Apartments", href: "#apartments" },
+    // { label: "Apartments", href: "#apartments" },
+    { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -75,13 +76,13 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
-            <Button
+            {/* <Button
               onClick={() => scrollToSection("#quote-generator")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg font-semibold btn-premium"
             >
               <Calculator className="w-4 h-4 mr-2" />
               Get Quote
-            </Button>
+            </Button> */}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -115,7 +116,7 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
-              <button
+              {/* <button
                 onClick={() => scrollToSection("#quote-generator")}
                 className={cn(
                   "block w-full text-left px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 ease-out transform hover:translate-x-1 rounded-lg mx-4 mt-2",
@@ -125,7 +126,7 @@ const Header = () => {
               >
                 <Calculator className="w-4 h-4 mr-2 inline" />
                 Get Quote
-              </button>
+              </button> */}
             </nav>
           </div>
         </div>

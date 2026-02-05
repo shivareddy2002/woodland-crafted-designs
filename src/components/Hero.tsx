@@ -22,8 +22,9 @@ const Hero = () => {
       {/* Content with staggered animations */}
       <div className="relative z-10 container mx-auto px-4 lg:px-6 text-center text-primary-foreground">
         <div className="max-w-4xl mx-auto space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]">
-            Discover the Beauty of Wood
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]">
+            {/* Discover the Beauty of Wood */}
+            Manifesting Your Vision into Timeless Spaces
           </h1>
           
           <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90 opacity-0 animate-fade-up [animation-delay:500ms] [animation-fill-mode:forwards]">
@@ -31,7 +32,7 @@ const Hero = () => {
             Quality, sustainability, and craftsmanship in every piece.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 opacity-0 animate-fade-up [animation-delay:700ms] [animation-fill-mode:forwards]">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 opacity-0 animate-fade-up [animation-delay:700ms] [animation-fill-mode:forwards]">
             <Button
               size="lg"
               variant="secondary"
@@ -48,16 +49,17 @@ const Hero = () => {
             >
               Learn More
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
 
-      {/* Scroll Indicator with fade animation */}
+      {/* Scroll Indicator with fade animation 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-up [animation-delay:1000ms] [animation-fill-mode:forwards]">
         <div className="w-6 h-10 border-2 border-primary-foreground rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary-foreground rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
+      */}
     </section>
   );
 };

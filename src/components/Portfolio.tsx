@@ -559,7 +559,7 @@ const Portfolio = () => {
                 </div>
 
                 {/* Project Highlights */}
-                <div>
+                {/* <div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Project Highlights</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.highlights.split(", ").map((highlight: string, idx: number) => (
@@ -568,15 +568,15 @@ const Portfolio = () => {
                       </Badge>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Budget */}
-                <div>
+                {/* <div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Investment Range</h3>
                   <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-4 rounded-lg border border-primary/20">
                     <p className="text-xl font-bold text-primary">{selectedProject.budget}</p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Customer Testimonial */}
                 <div className="bg-muted/50 p-6 rounded-lg relative border-l-4 border-primary">
@@ -587,10 +587,10 @@ const Portfolio = () => {
                   <p className="text-sm font-semibold text-muted-foreground">
                     — {selectedProject.customer}, {selectedProject.location}
                   </p>
-                </div>
+                </div> 
 
                 {/* CTA */}
-                <div className="flex gap-4 pt-4">
+                {/* <div className="flex gap-4 pt-4">
                   <a href="#contact" className="flex-1">
                     <Button size="lg" className="w-full font-semibold">
                       Get Similar Design
@@ -601,7 +601,7 @@ const Portfolio = () => {
                       Request Quote
                     </Button>
                   </a>
-                </div>
+                </div> */}
               </div>
             </>
           )}

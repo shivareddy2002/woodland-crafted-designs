@@ -13,8 +13,8 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: Award, value: "8+", label: "Years Experience" },
-    { icon: Target, value: "100+", label: "Projects Completed" },
+    { icon: Award, value: "7+", label: "Years Experience" },
+    { icon: Target, value: "30+", label: "Projects Completed" },
     { icon: TreePine, value: "100%", label: "Sustainable Wood" },
     { icon: Clock, value: "24/7", label: "Customer Support" },
   ];
@@ -120,7 +120,7 @@ const About = () => {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">Phone:</span>
-                    <a href="tel:+919555222567" className="text-primary hover:underline link-underline">9555222567</a>
+                    <a href="tel:+919555222567" className="text-primary hover:underline link-underline">+91 9555222567</a>
                   </div>
                 </div>
               </div>
