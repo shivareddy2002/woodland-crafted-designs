@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import logoImage from "@/assets/logo.png";
+import logoImage from "@/assets/animate.png";
 
 interface IntroAnimationProps {
   onComplete: () => void;
@@ -67,7 +67,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(145deg, hsl(25 40% 14%) 0%, hsl(20 35% 10%) 40%, hsl(28 38% 16%) 70%, hsl(22 32% 11%) 100%)",
+            "linear-gradient(145deg, hsl(22, 3%, 54%) 0%, hsl(21, 7%, 42%) 40%, hsl(30, 5%, 44%) 70%, hsl(24, 6%, 47%) 100%)",
         }}
       />
 
@@ -140,7 +140,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
       {/* Content container */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full h-full">
         {/* "You are in IDL" — fade in then fade out */}
-        <div
+        {/* <div
           className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-[1200ms] ease-in-out ${
             text1Visible ? "opacity-100" : "opacity-0"
           }`}
@@ -156,7 +156,27 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
               text1Visible ? "w-32 md:w-56 opacity-60" : "w-0 opacity-0"
             }`}
           />
+        </div> */}
+        <div
+          className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-[1200ms] ease-in-out ${
+            text1Visible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <p className="text-[hsl(35_40%_70%)] text-2xl md:text-3xl lg:text-4xl tracking-[0.4em] uppercase font-light mb-6 md:mb-8">
+            You are in
+          </p>
+
+          <h1 className="text-[hsl(38_35%_85%)] text-7xl md:text-9xl lg:text-[10rem] font-bold tracking-[0.18em]">
+            IDL
+          </h1>
+
+          <div
+            className={`mx-auto mt-8 h-[1px] bg-gradient-to-r from-transparent via-[hsl(35_50%_45%)] to-transparent transition-all duration-[1500ms] ease-in-out ${
+              text1Visible ? "w-40 md:w-72 lg:w-96 opacity-70" : "w-0 opacity-0"
+            }`}
+          />
         </div>
+
 
         {/* "In Design Land" — fade in then fade out */}
         <div
@@ -164,18 +184,21 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
             text2Visible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <h2 className="text-[hsl(38_35%_85%)] text-4xl md:text-6xl lg:text-8xl font-light tracking-[0.2em]">
+          <h2 className="text-[hsl(38_35%_85%)] text-5xl md:text-7xl lg:text-9xl font-light tracking-[0.22em]">
             In Design Land
           </h2>
+
           <div
-            className={`mx-auto mt-6 md:mt-8 h-[1px] bg-gradient-to-r from-transparent via-[hsl(35_55%_50%)] to-transparent transition-all duration-[1500ms] ease-in-out ${
-              text2Visible ? "w-56 md:w-96 opacity-70" : "w-0 opacity-0"
+            className={`mx-auto mt-8 md:mt-10 h-[1px] bg-gradient-to-r from-transparent via-[hsl(35_55%_50%)] to-transparent transition-all duration-[1500ms] ease-in-out ${
+              text2Visible ? "w-72 md:w-[28rem] lg:w-[36rem] opacity-70" : "w-0 opacity-0"
             }`}
           />
-          <p className="text-[hsl(33_35%_55%)] text-base md:text-lg lg:text-xl tracking-[0.3em] uppercase mt-6 md:mt-8 font-light">
+
+          <p className="text-[hsl(33_35%_55%)] text-lg md:text-xl lg:text-2xl tracking-[0.35em] uppercase mt-8 md:mt-10 font-light">
             Premium Wood Solutions
           </p>
         </div>
+
 
         {/* Logo — fade in then held until scene fades */}
         <div
@@ -208,11 +231,13 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
           <img
             src={logoImage}
             alt="In Design Land"
-            className="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 object-contain relative z-10"
+            className="w-[90vw] h-[90vw] md:w-[65vw] md:h-[65vw] lg:w-[45vw] lg:h-[45vw] object-contain relative z-10"
           />
-          <p className="text-[hsl(33_35%_55%)] text-sm md:text-base lg:text-lg tracking-[0.4em] uppercase mt-8 md:mt-10 font-light relative z-10">
-            Crafted with Passion
-          </p>
+
+        <p className="text-[hsl(33_35%_55%)] text-[2.4vw] tracking-[0.55em] uppercase mt-[5vh] font-light relative z-10">
+          Crafted with Passion
+        </p>
+
         </div>
       </div>
 

@@ -28,14 +28,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {showIntro && <IntroAnimation onComplete={handleIntroComplete} />}
+      {/* {showIntro && <IntroAnimation onComplete={handleIntroComplete} />} */}
       <Header />
       <main>
         <Hero />
         <FeaturedProducts />
         <ApartmentTypes />
         <OurProcess />
-        <VideoShowcase />
+        {/* <VideoShowcase /> */}
         {/* <Services /> */}
         <FeaturedCustomerProjects />
         <WhyChooseUs />

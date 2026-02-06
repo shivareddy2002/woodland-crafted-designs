@@ -87,10 +87,9 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className={cn(
+        {/* <div className={cn(
           "text-center mt-16 transition-all duration-700 ease-out",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        )} style={{ transitionDelay: "900ms" }}>
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{ transitionDelay: "900ms" }}>
           <div className="bg-gradient-to-r from-wood-light to-wood-medium p-8 rounded-lg">
             <h3 className="text-2xl font-bold text-primary mb-4">
               Ready to Transform Your Space?
@@ -115,7 +114,7 @@ const Services = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

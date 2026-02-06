@@ -13,14 +13,14 @@ const FindUs = () => {
   ];
 
   return (
-    <section id="find-us" className="py-20 bg-background" ref={sectionRef as React.RefObject<HTMLElement>}>
+    <section id="find-us" className="py-8 bg-background" ref={sectionRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
         {/* Header */}
         <div className={cn(
-          "text-center mb-12 transition-all duration-700 ease-out",
+          "text-center mb-8 transition-all duration-700 ease-out",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-2">
             Find Us
           </h2>
           <p className={cn(
@@ -31,7 +31,7 @@ const FindUs = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-stretch">
           {/* Location Info */}
           <div className={cn(
             "h-full transition-all duration-700 ease-out",
@@ -39,7 +39,7 @@ const FindUs = () => {
           )} style={{ transitionDelay: "300ms" }}>
             <Card className="bg-card border border-wood-medium h-full hover-glow transition-all duration-500">
               <CardContent className="p-8 h-full flex flex-col">
-                <h3 className="text-2xl font-bold text-primary mb-6">Visit Our Factory</h3>
+                <h3 className="text-2xl font-bold text-primary mb-3">Visit Our Factory</h3>
                 
                 <div className="space-y-4 flex-grow">
                   <div className={cn(
@@ -90,7 +90,7 @@ const FindUs = () => {
 
           {/* Google Map */}
           <div className={cn(
-            "h-full min-h-[400px] lg:min-h-[500px] rounded-lg overflow-hidden border border-wood-medium shadow-lg transition-all duration-700 ease-out",
+            "h-full min-h-[300px] lg:min-h-[380px] rounded-lg overflow-hidden border border-wood-medium shadow-lg transition-all duration-700 ease-out",
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
           )} style={{ transitionDelay: "400ms" }}>
             <iframe

@@ -42,10 +42,17 @@ const ProjectLocationsMap = () => {
     map.current = L.map(mapContainer.current).setView([20.5937, 78.9629], 5);
     
     // Add tile layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 19,
-    }).addTo(map.current);
+const MAPTILER_KEY = import.meta.env.VITE_MAPTILER_KEY;
+
+L.tileLayer(
+  `https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=${MAPTILER_KEY}`,
+  {
+    maxZoom: 20,
+    attribution:
+      '&copy; <a href="https://www.maptiler.com/">MapTiler</a> &copy; OpenStreetMap contributors',
+  }
+).addTo(map.current);
+
 
     // Add markers for each location
     locations.forEach((location) => {

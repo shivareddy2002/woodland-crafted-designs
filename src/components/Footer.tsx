@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
@@ -10,11 +10,10 @@ const Footer = () => {
   const quickLinks = [
     { label: "Home", href: "#home" },
     { label: "Products", href: "#products" },
-    { label: "Process", href: "#OurProcess" },
     // { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#customer-projects" },
     { label: "About Us", href: "#about" },
-    // { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "#contact" },
     
   ];
 
@@ -29,12 +28,13 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com/rupasthala.design.studio", label: "Facebook" },
     { icon: Instagram, href: "https://instagram.com/rupasthala_design_studio", label: "Instagram" },
+    { icon: Youtube,href: "https://youtube.com/@rupasthala",label: "YouTube",},
     // { icon: Linkedin, href: "#", label: "LinkedIn" },
     // { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground py-12" ref={footerRef as React.RefObject<HTMLElement>}>
+    <footer className="bg-primary text-primary-foreground py-6" ref={footerRef as React.RefObject<HTMLElement>}>
       <div className="container mx-auto px-4 lg:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -43,7 +43,7 @@ const Footer = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="In Design Land Logo" className="w-8 h-8 rounded-lg object-cover" />
+              <img src={logo} alt="In Design Land Logo" className="w-14 h-14 rounded-lg object-cover" />
               <div>
                 <div className="font-bold text-lg">In Design Land</div>
                 <div className="text-sm opacity-90">Premium Wood Solutions</div>
@@ -56,10 +56,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className={cn(
-            "transition-all duration-700 ease-out",
+            "transition-all duration-700 px-20 ease-out",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )} style={{ transitionDelay: "100ms" }}>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-lg mb-3">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               {quickLinks.map((link, index) => (
                 <li 
@@ -83,7 +83,7 @@ const Footer = () => {
             "transition-all duration-700 ease-out",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )} style={{ transitionDelay: "200ms" }}>
-            <h3 className="font-bold text-lg mb-4">Services</h3>
+            <h3 className="font-bold text-lg mb-3">Services</h3>
             <ul className="space-y-2 text-sm">
               {services.map((service, index) => (
                 <li 
@@ -105,7 +105,7 @@ const Footer = () => {
             "transition-all duration-700 ease-out",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )} style={{ transitionDelay: "300ms" }}>
-            <h3 className="font-bold text-lg mb-4">Contact Info</h3>
+            <h3 className="font-bold text-lg mb-3">Contact Info</h3>
             <div className="space-y-3 text-sm">
               <div className={cn(
                 "transition-all duration-500 ease-out",
@@ -141,7 +141,7 @@ const Footer = () => {
 
         {/* Divider */}
         <div className={cn(
-          "border-t border-primary-foreground/20 my-8 transition-all duration-700 ease-out",
+          "border-t border-primary-foreground/20 my-6 transition-all duration-700 ease-out",
           isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
         )} style={{ transitionDelay: "600ms" }}></div>
 
@@ -153,22 +153,36 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {socialLinks.map((social, index) => (
-              <a 
+              // <a 
+              //   key={social.label}
+              //   href={social.href} 
+              //   target="_blank" 
+              //   rel="noopener noreferrer" 
+              //   className={cn(
+              //     "w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110",
+              //     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+              //   )}
+              //   style={{ transitionDelay: `${800 + index * 100}ms` }}
+              //   aria-label={social.label}
+              // >
+              //   <social.icon className="w-5 h-5 sm:w-4 sm:h-4" />
+              // </a>
+              <a
                 key={social.label}
-                href={social.href} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
                 className={cn(
-                  "w-10 h-10 sm:w-8 sm:h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 transform hover:scale-110",
+                  "w-11 h-11 sm:w-12 sm:h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-all duration-300 hover:scale-110",
                   isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
                 )}
-                style={{ transitionDelay: `${800 + index * 100}ms` }}
-                aria-label={social.label}
-              >
-                <social.icon className="w-5 h-5 sm:w-4 sm:h-4" />
+                style={{ transitionDelay: `${800 + index * 100}ms` }}>
+                <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
+
             ))}
-            <a 
+            {/* <a 
               href="https://youtube.com/@rupasthala" 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -182,7 +196,7 @@ const Footer = () => {
               <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a2.999 2.999 0 0 0-2.108-2.124C19.598 3.5 12 3.5 12 3.5s-7.598 0-9.39.562A2.999 2.999 0 0 0 .502 6.186C0 7.986 0 12 0 12s0 4.014.502 5.814a2.999 2.999 0 0 0 2.108 2.124C4.402 20.5 12 20.5 12 20.5s7.598 0 9.39-.562a2.999 2.999 0 0 0 2.108-2.124C24 16.014 24 12 24 12s0-4.014-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
