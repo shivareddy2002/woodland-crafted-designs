@@ -291,3 +291,74 @@
     transform: translateY(0);
   }
 }
+
+/* Intro Animation - Wood Grain */
+@keyframes woodGrainDrift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes woodGrainDrift2 {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-30px) translateX(10px);
+  }
+}
+
+.intro-wood-grain {
+  background-image: repeating-linear-gradient(
+    90deg,
+    hsl(25 40% 25% / 0.3) 0px,
+    hsl(30 35% 30% / 0.1) 2px,
+    transparent 4px,
+    transparent 8px,
+    hsl(20 45% 20% / 0.2) 10px,
+    transparent 12px,
+    transparent 20px
+  );
+  background-size: 200% 200%;
+  animation: woodGrainDrift 12s linear infinite;
+}
+
+.intro-wood-grain-2 {
+  background-image: repeating-linear-gradient(
+    95deg,
+    hsl(30 30% 30% / 0.2) 0px,
+    transparent 3px,
+    transparent 6px,
+    hsl(25 35% 25% / 0.15) 8px,
+    transparent 10px,
+    transparent 16px
+  );
+  background-size: 200% 200%;
+  animation: woodGrainDrift2 16s linear infinite;
+}
+
+.intro-particle {
+  position: absolute;
+  background: hsl(35 30% 60% / 0.5);
+  border-radius: 50%;
+  animation: particleFloat 6s ease-in-out infinite;
+}

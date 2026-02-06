@@ -1,3 +1,4 @@
+import { useState, useCallback } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -16,10 +17,18 @@ import Contact from "@/components/Contact";
 import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import IntroAnimation from "@/components/IntroAnimation";
 
 const Index = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
+  const handleIntroComplete = useCallback(() => {
+    setShowIntro(false);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
+      {showIntro && <IntroAnimation onComplete={handleIntroComplete} />}
       <Header />
       <main>
         <Hero />
