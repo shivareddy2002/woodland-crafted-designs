@@ -311,54 +311,132 @@
   }
 }
 
+@keyframes woodGrainDrift3 {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @keyframes particleFloat {
   0%, 100% {
     opacity: 0;
     transform: translateY(0) translateX(0);
   }
-  20% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.3;
+  15% {
+    opacity: 0.5;
   }
   50% {
-    transform: translateY(-30px) translateX(10px);
+    transform: translateY(-40px) translateX(15px);
+    opacity: 0.35;
+  }
+  85% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  40% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+@keyframes ambientGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1) translate(0, 0);
+  }
+  33% {
+    opacity: 0.25;
+    transform: scale(1.05) translate(2%, -1%);
+  }
+  66% {
+    opacity: 0.18;
+    transform: scale(0.98) translate(-1%, 2%);
   }
 }
 
 .intro-wood-grain {
   background-image: repeating-linear-gradient(
-    90deg,
-    hsl(25 40% 25% / 0.3) 0px,
-    hsl(30 35% 30% / 0.1) 2px,
+    88deg,
+    hsl(28 42% 28% / 0.35) 0px,
+    hsl(32 38% 32% / 0.15) 2px,
     transparent 4px,
-    transparent 8px,
-    hsl(20 45% 20% / 0.2) 10px,
-    transparent 12px,
-    transparent 20px
+    transparent 7px,
+    hsl(25 45% 24% / 0.25) 9px,
+    transparent 11px,
+    transparent 18px
   );
   background-size: 200% 200%;
-  animation: woodGrainDrift 12s linear infinite;
+  animation: woodGrainDrift 14s linear infinite;
 }
 
 .intro-wood-grain-2 {
   background-image: repeating-linear-gradient(
-    95deg,
-    hsl(30 30% 30% / 0.2) 0px,
+    93deg,
+    hsl(32 35% 30% / 0.25) 0px,
     transparent 3px,
-    transparent 6px,
-    hsl(25 35% 25% / 0.15) 8px,
-    transparent 10px,
-    transparent 16px
+    transparent 5px,
+    hsl(28 40% 28% / 0.18) 7px,
+    transparent 9px,
+    transparent 14px
   );
   background-size: 200% 200%;
-  animation: woodGrainDrift2 16s linear infinite;
+  animation: woodGrainDrift2 18s linear infinite;
+}
+
+.intro-wood-grain-3 {
+  background-image: repeating-linear-gradient(
+    96deg,
+    hsl(30 32% 26% / 0.2) 0px,
+    transparent 2px,
+    transparent 6px,
+    hsl(26 38% 22% / 0.12) 8px,
+    transparent 10px,
+    transparent 22px
+  );
+  background-size: 200% 200%;
+  animation: woodGrainDrift3 22s linear infinite;
+}
+
+.intro-light-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 35%,
+    hsl(38 55% 50% / 0.06) 45%,
+    hsl(35 50% 45% / 0.1) 50%,
+    hsl(38 55% 50% / 0.06) 55%,
+    transparent 65%,
+    transparent 100%
+  );
+  animation: lightSweep 8s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.intro-ambient-glow {
+  background: radial-gradient(
+    ellipse 60% 50% at 45% 55%,
+    hsl(33 50% 30% / 0.2) 0%,
+    hsl(30 45% 25% / 0.08) 40%,
+    transparent 70%
+  );
+  animation: ambientGlow 10s ease-in-out infinite;
 }
 
 .intro-particle {
   position: absolute;
-  background: hsl(35 30% 60% / 0.5);
+  background: radial-gradient(circle, hsl(38 45% 60% / 0.6) 0%, hsl(35 40% 50% / 0.2) 100%);
   border-radius: 50%;
-  animation: particleFloat 6s ease-in-out infinite;
+  animation: particleFloat 7s ease-in-out infinite;
 }
