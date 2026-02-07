@@ -18,6 +18,7 @@ import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import IntroAnimation from "@/components/IntroAnimation";
+import HomeSpaceCollections from "@/components/HomeSpaceCollections";
 
 const Index = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -34,6 +35,7 @@ const Index = () => {
         <Hero />
         <FeaturedProducts />
         <ApartmentTypes />
+        <HomeSpaceCollections />
         <OurProcess />
         {/* <VideoShowcase /> */}
         {/* <Services /> */}

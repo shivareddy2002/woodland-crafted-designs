@@ -128,6 +128,15 @@
 }
 
 @layer components {
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Enhanced button animations */
   .btn-hover-lift {
     @apply transition-all duration-300 ease-out transform hover:shadow-lg active:scale-95;
